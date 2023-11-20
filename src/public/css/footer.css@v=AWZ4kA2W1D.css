@@ -1,0 +1,530 @@
+#footer .bottom-contact {
+	height: 250px;
+}
+#footer .has-border{position: relative;}
+#footer .has-border:after{content:"";position: absolute;width: 2px;background: #fff;right: 40px;height: 70%;top: 5%;}
+#footer .has-border:before{content:"";position: absolute;width: 2px;background: #fff;left: 0;height: 70%;top: 5%;}
+.bottom-contact iframe {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100% !important;
+	height: 100% !important;
+}
+
+/* #footer */
+.btn-primary {
+	background: #d3171e;
+	border: 0;
+	border-radius: 0;
+	/* padding: 5px 20px; */
+	border-radius: 4px;
+}
+input.btn.btn-secondary {
+    background-color: #005ba9;
+}
+.form-#footer {
+}
+.form-#footer .input {
+	border-radius: 0;
+	margin-bottom: 2px;
+	border: 0;
+	color: #0b6740;
+	font-size: 15px;
+}
+
+#footer .i-map{
+}
+#footer .i-hotline{
+	background: url(../images/phone-i.png) no-repeat 10px 5px;
+	padding-left: 85px !important;
+	padding-top: 9px;
+	min-height: 60px;
+}
+#footer .i-email{
+	background: url(../images/email-i.png) no-repeat 15px 10px;
+	padding-left: 85px !important;
+	padding-top: 6px;
+}
+#footer .i-map strong{
+	/* font-family: 'Roboto Condensed'; */
+	font-size: 20px;
+	margin-bottom: 9px;
+	display: block;
+}
+#footer .has-i p{
+	margin: 0;
+}
+
+#footer .company-info{}
+#footer .company-info .content div{
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+#footer .company-info div span{
+    border: 1px solid rgb(255 255 255 / 63%);
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 5px;
+    margin-right: 4px;
+}
+#footer .company-info h1,#footer .company-info h2{
+    color: #f5b70a;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+#footer {
+	position: relative;
+	color: #dfdfdf;
+	z-index: 1;
+	padding-top: 40px;
+	line-height: 1.5;
+	background: #da0000;
+	background-size: cover;
+}
+#footer .top-section-newsletter {
+	border-bottom: 1px solid rgb(204 204 204 / 40%);
+	padding: 10px 0 23px 0;
+}
+#footer .top-section-newsletter .title i {
+	font-size: 60px;
+	line-height: 1;
+}
+#footer .top-section-newsletter .title {
+	font-size: 27px;
+	font-weight: 500;
+	text-transform: uppercase;
+}
+#footer .top-section-newsletter .desc {
+}
+#footer .top-section-newsletter .desc span {
+}
+#footer .top-section-newsletter .desc span img {
+}
+#footer .top-section-newsletter .form-newsletter {
+}
+#footer .top-section-newsletter .form-newsletter div {
+	border-radius: 4px;
+	overflow: hidden;
+}
+#footer .top-section-newsletter .form-newsletter div input {
+	width: 100%;
+	border: 0;
+	padding: 8px 12px;
+}
+#footer .top-section-newsletter .form-newsletter div button {
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: #fce213;
+	border: 0;
+	height: 100%;
+	padding: 0 20px;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+#footer .list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	margin-top: 10px;
+}
+
+#footer .list li {
+	position: relative;
+	padding-left: 0;
+	margin-bottom: 15px;
+}
+
+#footer .list li a {
+	font-size: 15px;
+	color: #fff;
+}
+
+#footer .content-info {
+}
+#footer .content-info div {
+	padding-left: 35px;
+	position: relative;
+	margin-bottom: 10px;
+	font-size: 15px;
+}
+#footer .content-info div i {
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-size: 20px;
+}
+#footer .small-title-2:after {content:"";width: 40px;height: 1px;background: #f5b70a;position: absolute;left: 0;bottom: 0;}
+#footer .small-title-2 {
+	text-transform: uppercase;
+	margin-bottom: 10px;
+	padding-bottom: 2px;
+	color: #f5b70a;
+	position: relative;
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 1.5;
+	position: relative;
+}
+#footer .small-title {
+	text-transform: uppercase;
+
+	margin-bottom: 5px;
+	padding-bottom: 5px;
+	font-size: 27px;
+	color: #ffd200;
+
+	position: relative;
+	font-family: "Playfair Display";
+}
+
+#footer .logo-#footer {
+	flex: 0 0 34%;
+	padding-top: 20px;
+}
+
+#footer .address-#footer div {
+	margin-bottom: 5px;
+	font-size: 13px;
+}
+
+#footer .address-#footer {
+	flex: 0 0 40%;
+}
+
+#footer .address-#footer span {
+	border: 1px solid #cccccc5e;
+	width: 30px;
+	display: inline-block;
+	height: 30px;
+	border-radius: 3px;
+	line-height: 30px;
+	text-align: center;
+	margin-right: 10px;
+}
+
+#footer .address-#footer span i {
+}
+
+#footer .payment-#footer {
+	flex: 0 0 23%;
+	align-self: flex-end;
+}
+
+#footer .main-title {
+	text-align: left;
+}
+
+#footer .main-title .title {
+	color: #fff;
+	padding-left: 0;
+}
+
+#footer .main-title .title:after {
+	left: 0;
+}
+
+#footer .content .cname {
+	/* font-family: utm_swissblack; */
+	font-size: 16px;
+	text-transform: uppercase;
+	line-height: 26px;
+	margin: 0;
+	color: #f4cc0a;
+}
+
+#footer .content .sp-item:last-child {
+	border: 0;
+}
+
+#footer .content .sp-item {
+	font-size: 16px;
+	border-bottom: 2px solid #fff;
+	margin-bottom: 9px;
+}
+
+#footer .content .sp-item p {
+	background: url(https://cokhinguyenhungdalat.com/assets/img/phone-footer.png) no-repeat 1px 5px;
+	padding: 0px 0;
+	margin: 0;
+	padding-left: 45px;
+}
+
+#footer .content .sp-item p span a {
+	color: #f4cc0a;
+}
+
+#footer .content .sp-item p a:hover {
+	text-decoration: none;
+	color: #fff;
+}
+
+#footer .content .sp-item p a {
+	color: #fff;
+}
+
+#footer .content .sp-item p span {
+	clear: both;
+	display: block;
+}
+
+#footer .content .sp-item p:last-child {
+	background: url(https://cokhinguyenhungdalat.com/assets/img/email-footer.png) no-repeat 4px 0px;
+	padding: 10px 0;
+	padding-left: 45px;
+	font-size: 13px;
+}
+
+#footer .content.key {
+}
+
+#footer .content.key a {
+	font-size: 14px;
+	padding: 2px 8px;
+	color: #fff;
+	border: 1px solid #fff;
+	margin: 0 5px 5px 0;
+	display: inline-block;
+}
+
+#footer .content .brand-item {
+	padding: 3px 0;
+}
+
+#footer .content .brand-item .name {
+	color: yellow;
+	font-size: 16px;
+	text-transform: uppercase;
+}
+
+#footer .content .brand-item .desc {
+}
+
+#footer .content .company-name {
+	letter-spacing: 2px;
+	font-size: 23px;
+	text-transform: uppercase;
+	margin-bottom: 20px;
+}
+
+#footer .content .linex {
+	margin-bottom: 10px;
+}
+
+#footer .content .linex span:first-child {
+	margin-right: 14px;
+}
+
+#footer .content .linex span:first-child i {
+	width: 40px;
+	height: 40px;
+	display: block;
+	border-radius: 50%;
+	border: 1px solid #fff;
+	text-align: center;
+	line-height: 40px;
+	font-size: 18px;
+}
+
+#footer .content .linex span:first-child i:before {
+}
+
+#footer .content .linex span {
+}
+
+#footer .content .map-#footer {
+	margin-top: 10px;
+}
+
+#footer .content .map-#footer .inner-map {
+	position: relative;
+	padding-bottom: 60%;
+	height: 0;
+}
+
+#footer .content .map-#footer .inner-map iframe {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+#footer .content .footer-item {
+}
+#footer .content .footer-item .line {
+	margin-bottom: 10px;
+	font-size: 16px;
+}
+#footer .call div {
+	margin-bottom: 12px;
+}
+#footer .call {
+	font-weight: 500;
+}
+#footer .more {
+	margin: 20px 0;
+}
+#footer .more a {
+	color: #fff;
+	border: 1px solid rgb(255 255 255 / 72%);
+	font-weight: 500;
+	font-size: 15px;
+	padding: 6px 20px;
+	border-radius: 30px;
+	text-decoration: none !important;
+}
+#footer .content {
+	font-size: 14px;
+	margin-top: 0px !important;
+}
+#footer .desc{
+    font-size: 13px;
+}
+#footer .form-newsletter{
+    margin: 20px 0;
+    position: relative;
+}
+#footer .form-newsletter input{
+    width: 100%;
+    padding: 6px 10px;
+    border: 1px solid #fff;
+}
+#footer .form-newsletter button{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    padding: 0 13px;
+    border: 0;
+    background: transparent;
+    border-left: 1px solid #ccc;
+}
+#footer .w-bct {
+	margin-top: 20px;
+}
+
+#footer .content.tag {
+}
+
+#footer .content.tag > a {
+	color: #fff;
+	border: 1px solid #ccc;
+	display: inline-block;
+	padding: 4px 10px;
+	margin: 0 3px 3px 0;
+	text-transform: capitalize;
+}
+
+#footer .content .map-wrapper {
+	position: relative;
+	height: 0;
+	padding-bottom: 66.25%;
+	overflow: hidden;
+}
+
+#footer .content .map-wrapper iframe {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+#footer .content .sub-title {
+	margin-bottom: 20px;
+}
+
+#footer .content .item {
+	font-size: 14px;
+	position: relative;
+	min-height: 22px;
+	padding-top: 7px;
+	line-height: 22px;
+	margin-bottom: 3px;
+}
+
+#footer .social a i.icon-facebook {
+	color: #097eeb;
+}
+#footer .social a i.icon-twitter {
+	color: #6edbfe;
+}
+#footer .social a i.icon-youtube {
+	color: red;
+}
+#footer .social a i {
+	font-size: 23px;
+}
+
+#footer .content .item span {
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+	color: #353535;
+	line-height: 35px;
+	text-align: center;
+	/* position: absolute; */
+	left: 0;
+	top: 0;
+}
+
+#footer .content .item span i {
+}
+
+#footer .content ul {
+	list-style: none;
+	padding: 0;
+}
+
+#footer .content ul li {
+	padding: 0 0 7px 0;
+	position: relative;
+}
+
+#footer .content ul li a {
+	transition: 0.5s ease;
+	color: #efefef;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+#footer .content ul li:hover a {
+	text-decoration: none;
+	color: #f1b315;
+}
+#footer .content.social span{
+    text-transform: uppercase;
+    font-size: 17px;
+    font-weight: 500;
+}
+#footer .content.social {
+	margin-top: 0 !important;
+}
+
+#footer .content.social a { 
+	display: inline-block;
+	line-height: 40px;
+	font-size: 16px;
+	text-align: center;
+	margin-bottom: 2px;
+	margin-right: 10px;
+}
+
+#footer .form-email button {
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: #fca00f;
+	border: 0;
+	color: #fff;
+	height: 100%;
+	line-height: 13px;
+	border-radius: 0;
+	padding: 0 16px;
+}
