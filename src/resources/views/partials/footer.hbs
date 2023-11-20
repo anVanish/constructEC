@@ -5,15 +5,15 @@
             <div class="col-12 col-md-5  mb-3 company-info">
 
 
-                <h1>CÔNG TY TNHH CƠ KHÍ NGUYÊN HÙNG</h1>
+                <h1>{{shop.name}}</h1>
                 <div class="slogan-footer"></div>
                 <div class="content">
-                    <div><span><i class="fal fa-map-marker-alt"></i></span>&nbsp;216/11 Nguyên Tử Lực, P.8, Tp.Đà Lạt,
-                        Lâm Đồng</div>
-                    <div><span><i class="fas fa-phone-alt"></i></span>&nbsp;0913 953 574 - 0385 09 77 71</div>
-                    <div><span><i class="fal fa-envelope-open-text"></i></span>&nbsp;cokhinguyenhungdalat@gmail.com
+                    <div><span><i class="fal fa-map-marker-alt"></i></span>&nbsp;{{shop.address.street}}, {{shop.address.ward}}, {{shop.address.district}},
+                        {{shop.address.provice}}</div>
+                    <div><span><i class="fas fa-phone-alt"></i></span>&nbsp;{{#each shop.phone}} | {{this}} {{/each}}</div>
+                    <div><span><i class="fal fa-envelope-open-text"></i></span>&nbsp;{{shop.email}}
                     </div>
-                    <div><span><i class="fal fa-globe"></i></span>&nbsp;www.cokhinguyenhungdalat.com</div>
+                    <div><span><i class="fal fa-globe"></i></span>&nbsp;www.{{shop.social.website}}</div>
                 </div>
 
 
@@ -26,18 +26,17 @@
                         <div class="small-title-2 text-shadow">Chính sách</div>
                         <div class="content">
                             <ul>
-                                <li><a href="https://cokhinguyenhungdalat.com/ho-tro-dat-hang">Hỗ trợ đặt hàng</a></li>
-                                <li><a href="https://cokhinguyenhungdalat.com/chinh-sach-mua-hang">Chính sách mua
+                                <li><a href="/ho-tro-dat-hang">Hỗ trợ đặt hàng</a></li>
+                                <li><a href="/chinh-sach-mua-hang">Chính sách mua
                                         hàng</a></li>
-                                <li><a href="https://cokhinguyenhungdalat.com/chinh-sach-bao-hanh">Chính sách bảo
+                                <li><a href="/chinh-sach-bao-hanh">Chính sách bảo
                                         hành</a></li>
-                                <li><a href="https://cokhinguyenhungdalat.com/chinh-sach-bao-mat-thong-tin">Chính sách
+                                <li><a href="/chinh-sach-bao-mat">Chính sách
                                         bảo mật thông tin</a></li>
-                                <li><a href="https://cokhinguyenhungdalat.com/chinh-sach-ban-hang">Chính sách bán
+                                <li><a href="/chinh-sach-ban-hang">Chính sách bán
                                         hàng</a></li>
                             </ul>
                         </div>
-
                     </div>
                     <div class="col-12 col-md-6  mb-3">
 
@@ -52,7 +51,7 @@
                             </div>
                             <div class="content social ">
 
-                                <a href="https://www.facebook.com/NguyenHungTranInox/" target="_blank"
+                                <a href="{{shop.social.facebook}}" target="_blank"
                                     rel="nofollow noopener"><img src="/thumbs/42x0x1/upload/photo/s1-73160.png" /></a>
                             </div>
                         </div>

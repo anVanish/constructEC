@@ -1,26 +1,24 @@
 <ul class="h-card hidden">
-    <li class="h-fn fn">CÔNG TY TNHH CƠ KHÍ NGUYÊN HÙNG</li>
-    <li class="h-org org">CÔNG TY TNHH CƠ KHÍ NGUYÊN HÙNG</li>
-    <li class="h-tel tel">0913953574</li>
-    <li><a class="u-url ul" href="/">https://cokhinguyenhungdalat.com/</a></li>
+    <li class="h-fn fn">{{shop.name}}</li>
+    <li class="h-org org">{{shop.name}}</li>
+    <li class="h-tel tel">{{shop.phone.[0]}}</li>
+    <li><a class="u-url ul" href="/">{{shop.social.website}}</a></li>
 </ul>
-<h1 class="hidden-seoh">CÔNG TY TNHH CƠ KHÍ NGUYÊN HÙNG | 0913 953 574 | 0385 09
-    77 71</h1>
+<h1 class="hidden-seoh">{{shop.name}} {{#each shop.phone}} | {{this}} {{/each}}</h1>
 
 <div class="header" id="main-header">
     <div class="head-slogan d-none d-sm-block">
         <div class="container">
             <div class="row justify-content-between">
                 <div class="col-auto">
-                    Hoạt động T2 - Chủ Nhật: 7:00 - 20:00
+                    Hoạt động {{shop.worktime}}
                 </div>
                 <div class="col-auto">
-                    <i class="far fa-map-marker-alt"></i>&nbsp;Địa chỉ: 216/11
-                    Nguyên Tử Lực, P.8, Tp.Đà Lạt, Lâm Đồng
+                    <i class="far fa-map-marker-alt"></i>&nbsp;Địa chỉ: {{shop.address.street}}, {{shop.address.ward}}, {{shop.address.district}}, {{shop.address.city}}
                 </div>
                 <div class="col-auto">
                     <i class="fas fa-envelope"></i>&nbsp;Email:
-                    cokhinguyenhungdalat@gmail.com
+                    {{shop.email}}
                 </div>
             </div>
         </div>
@@ -31,7 +29,7 @@
             <div class="row align-items-center justify-content-between">
                 <div class="col-12 col-md-2 pt-3">
                     <a href="/" class="col-auto"><img class="main-logo"
-                            src="/thumbs/105x0x1/upload/photo/logo-up-4490.jpg" /></a>
+                            src={{shop.logo}} /></a>
 
                 </div>
                 <div class="col-md-10 col-12">
@@ -42,8 +40,9 @@
                             <div class="xhotline">
                                 <span class="pull-left">Hotline</span>
                                 <div class="pull-left d-inline-block">
-                                    <a class="d-block" href="tel:0913953574">0913 953 574</a><br />
-                                    <a class="d-block" href="tel:0385097771">0385 09 77 71</a>
+                                    {{#each shop.phone}}
+                                    <a class="d-block" href="tel:{{this}}">{{this}}</a><br>
+                                    {{/each}}
                                 </div>
                                 <div class="clearfix"></div>
 
@@ -99,18 +98,18 @@
 
                 <div class="col-3 col-md-2 logo-col">
                     <div class="pr-3 pr-sm-0">
-                        <a href="index.html" class="col-auto"><img
-                                src="/thumbs/0x100x1/upload/photo/logo-up-4490.jpg" /></a>
+                        <a href="/" class="col-auto"><img
+                                src={{shop.logo}} /></a>
                     </div>
                 </div>
                 <div class="col-5 hotline-mobile">
-                    <a href="tel:0913953574"><i class="fal fa-phone-square-alt"></i>&nbsp;0913 953 574</a>
+                    <a href="tel:0913953574"><i class="fal fa-phone-square-alt"></i>&nbsp;{{shop.phone.[0]}}</a>
                 </div>
                 <div class="col-4 d-block d-sm-none">
                     <div class="menu-res">
                         <div class="menu-bar-res">
                             <a href="javascript:void(0)" class="trigger-search"><i class="fal fa-search"></i></a>
-                            <a id="hamburger" href="index.html#menu" title="Menu"><i class="fal fa-bars"></i></a>
+                            <a id="hamburger" href="/#menu" title="Menu"><i class="fal fa-bars"></i></a>
                         </div>
                     </div>
                     <nav id="menu">

@@ -1,4 +1,4 @@
-exports.items = {
+exports.shop = {
     name: "CÔNG TY TNHH CƠ KHÍ NGUYÊN HÙNG",
     logo: "http://localhost:3000/thumbs/105x0x1/upload/photo/logo-up-4490.jpg",
     address:  {
