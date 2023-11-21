@@ -25,6 +25,7 @@ class HomeController{
             })
         } catch (error) {
             next(error)
+            
         }
     }
 }
