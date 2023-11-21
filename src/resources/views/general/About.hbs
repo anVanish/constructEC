@@ -29,9 +29,7 @@
                     <p><span style="line-height:1.5;">Đ/C : {{shop.address.street}} - {{shop.address.ward}}, {{shop.address.district}} - {{shop.address.city}}</span></p>
 
                     <p><span style="line-height:1.5;">ĐT : 
-                        {{#each shop.phone}}
-                            - {{this}}
-                        {{/each}}
+                        {{showPhone shop.phone}}
                     </span></p>
                 </div>
                 <div class="share">

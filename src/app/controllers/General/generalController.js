@@ -8,7 +8,9 @@ class GeneralController{
         res.render('general/about', {
             shop: req.shop,
             cate: req.cate,
+            pageAbout: true
         })
+        req.success = true
     }
 
     //GET /lien-he
@@ -16,7 +18,9 @@ class GeneralController{
         res.render('general/contact', {
             shop: req.shop,
             cate: req.cate,
+            pageContact: true,
         })
+        req.success = true
     }
 
     //GET /cong-trinh
@@ -24,14 +28,18 @@ class GeneralController{
         res.render('general/construct', {
             shop: req.shop,
             cate: req.cate,
+            pageConstruct: true,
         })
+        req.success = true
     }
 
     //GET /dich-vu
     service(req, res, next){
         res.render('general/service', {
-            shop: req.shop
+            shop: req.shop,
+            pageService: true,
         })
+        req.success = true
     }
 }
 

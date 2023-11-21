@@ -10,7 +10,7 @@
                 <div class="content">
                     <div><span><i class="fal fa-map-marker-alt"></i></span>&nbsp;{{shop.address.street}}, {{shop.address.ward}}, {{shop.address.district}},
                         {{shop.address.provice}}</div>
-                    <div><span><i class="fas fa-phone-alt"></i></span>&nbsp;{{#each shop.phone}} | {{this}} {{/each}}</div>
+                    <div><span><i class="fas fa-phone-alt"></i></span>&nbsp;{{showPhone shop.phone}}</div>
                     <div><span><i class="fal fa-envelope-open-text"></i></span>&nbsp;{{shop.email}}
                     </div>
                     <div><span><i class="fal fa-globe"></i></span>&nbsp;www.{{shop.social.website}}</div>

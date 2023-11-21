@@ -1,5 +1,6 @@
 const Category = require('../../models/Category')
 const Product = require('../../models/Product')
+const pageProduct = true
 
 class CateController{
     //get danh-muc/:slug
@@ -36,6 +37,7 @@ class CateController{
                 next, last,
                 isCate: true,
                 currentCate: cate.toObject(),
+                pageProduct,
             })
         }catch(error){
             next(error)

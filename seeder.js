@@ -1,9 +1,11 @@
 const {shop} = require('./data/shop')
 const {categories} = require('./data/category')
 const {products} = require('./data/product')
+const {blogs} = require('./data/blog')
 const Shop = require('./src/app/models/Shop')
 const Category = require('./src/app/models/Category')
 const Product = require('./src/app/models/Product')
+const Blog = require('./src/app/models/Blog')
 const dotenv = require('dotenv')
 const db = require('./src/config/db')
 
@@ -60,6 +62,24 @@ async function clearAndSeedProduct(){
   }
 }
 
+async function clearAndSeedBlog(){
+  try {
+    // Clear existing shop data
+    await Blog.deleteMany({});
+
+    // Seed new cate data
+    for (let blogItem of blogs){
+        const blog = new Blog(blogItem)
+        await blog.save()
+    }
+    console.log('Blog info imported');
+  } catch (error) {
+    console.error(error);
+    console.log('Blog info import failure');
+  }
+}
+
 clearAndSeedShop()
 clearAndSeedCate()
 clearAndSeedProduct()
+clearAndSeedBlog()

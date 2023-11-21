@@ -19,8 +19,11 @@
         <div class="col-12 col-md-12">
 
             <div class="title-main has-filter d-flex align-items-center justify-content-between">
+                {{#if isCate}}
+                <h1>{{currentCate.name}}</h1>
+                {{else}}
                 <h1>Sản phẩm</h1>
-
+                {{/if}}
             </div>
             <div class="content-main w-clear">
 

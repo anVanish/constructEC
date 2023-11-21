@@ -66,10 +66,10 @@
     <div class="wrap-menu">
         <div class="menu clearfix container">
             <ul class="d-flex align-items-center justify-content-between menu-part">
-                <li><a class="transition active" href="/" title="Trang chủ">Trang chủ</a></li>
-                <li><a class="transition" href="/gioi-thieu"
+                <li><a class="transition {{#if pageHome}}active{{/if}}" href="/" title="Trang chủ">Trang chủ</a></li>
+                <li><a class="transition {{#if pageAbout}}active{{/if}}" href="/gioi-thieu"
                         title="GIỚI THIỆU">GIỚI THIỆU</a></li>
-                <li><a class="transition" href="/san-pham" title="SẢN PHẨM">SẢN
+                <li><a class="transition {{#if pageProduct}}active{{/if}}" href="/san-pham" title="SẢN PHẨM">SẢN
                         PHẨM</a>
                     <ul>
                         {{#each cate}}
@@ -77,13 +77,13 @@
                         {{/each}}
                     </ul>
                 </li>
-                <li><a class="transition" href="/dich-vu" title="Dịch vụ">Dịch
+                <li><a class="transition {{#if pageService}}active{{/if}}" href="/dich-vu" title="Dịch vụ">Dịch
                         vụ</a></li>
-                <li><a class="transition" href="/cong-trinh"
+                <li><a class="transition {{#if pageConstruct}}active{{/if}}" href="/cong-trinh"
                         title="Công trình">Công trình</a></li>
-                <li><a class="transition" href="/tin-tuc" title="Tin tức">Tin
+                <li><a class="transition {{#if pageBlog}}active{{/if}}" href="/tin-tuc" title="Tin tức">Tin
                         tức</a></li>
-                <li><a class="transition" href="/lien-he" title="Liên hệ">Liên
+                <li><a class="transition {{#if pageContact}}active{{/if}}" href="/lien-he" title="Liên hệ">Liên
                         hệ</a></li>
             </ul>
         </div>

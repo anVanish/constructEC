@@ -19,150 +19,30 @@
                 <h1>Tin tức</h1>
             </div>
             <div class="content-main w-clear">
-
                 <div class="row default row-10">
+                    {{#each blogs}}
                     <div class="col-md-3 col-sm-4 col-12 mb-3 default">
                         <div class="post-module">
                             <!-- Thumbnail-->
                             <div class="thumbnail mb-2">
-                                <a href="phan-biet-inox-chat-luong-tot-va-inox-ma.html"><img
+                                <a href="/tin-tuc/{{this.slug}}"><img
                                         onerror="this.src='thumbs/380x230x2/assets/images/noimage.png' "
-                                        src="thumbs/380x230x1/upload/news/phan-biet-inox-chat-luong-tot-inox-ma-6425.jpg" /></a>
+                                        src="{{this.img}}" /></a>
                             </div>
                             <!-- Post Content-->
                             <div class="post-content">
 
-                                <h3 class="title"><a href="phan-biet-inox-chat-luong-tot-va-inox-ma.html"
-                                        title="Phân biệt inox chất lượng tốt và inox mạ">Phân biệt inox chất lượng tốt
-                                        và inox mạ</a></h3>
+                                <h3 class="title"><a href="/tin-tuc/{{this.slug}}"
+                                        title="{{this.title}}">{{this.title}}</a></h3>
                                 <div class="time-main d-block d-sm-none"><i
-                                        class="fas fa-calendar-week"></i><span>15-05-2023</span></div>
-                                <p class="description text-split">Chất liệu inox đang ngày càng trở nên phổ biến, được
-                                    nhiều người tiêu dùng ưa chuộng bởi hình thức sáng bóng của vật liệu, trông rất sạch
-                                    sẽ.</p>
-                                <div class="post-meta "><small><i class="icon-calendar-1"></i> 15-05-2023</small></div>
+                                        class="fas fa-calendar-week"></i><span>{{this.createdAt}}</span></div>
+                                <p class="description text-split">{{this.content.[0].paragraph}}</p>
+                                <div class="post-meta "><small><i class="icon-calendar-1"></i> {{shortDate this.createdAt}}</small></div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-md-3 col-sm-4 col-12 mb-3 default">
-                        <div class="post-module">
-                            <!-- Thumbnail-->
-                            <div class="thumbnail mb-2">
-                                <a href="phan-biet-cac-loai-inox.html"><img
-                                        onerror="this.src='thumbs/380x230x2/assets/images/noimage.png' "
-                                        src="thumbs/380x230x1/upload/news/cach-phan-biet-3-loai-inox-pho-bien-tren-thi-truong-6974.jpg" /></a>
-                            </div>
-                            <!-- Post Content-->
-                            <div class="post-content">
-
-                                <h3 class="title"><a href="phan-biet-cac-loai-inox.html"
-                                        title="Phân biệt các loại inox">Phân biệt các loại inox</a></h3>
-                                <div class="time-main d-block d-sm-none"><i
-                                        class="fas fa-calendar-week"></i><span>18-04-2023</span></div>
-                                <p class="description text-split">Thép không gỉ hay còn gọi là inox là một dạng hợp kim
-                                    sắt chứa tối thiểu 10,5% crôm. Nó ít bị biến màu hay bị ăn mòn như thép thông thường
-                                    khác.</p>
-                                <div class="post-meta "><small><i class="icon-calendar-1"></i> 18-04-2023</small></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-4 col-12 mb-3 default">
-                        <div class="post-module">
-                            <!-- Thumbnail-->
-                            <div class="thumbnail mb-2">
-                                <a href="so-sanh-ve-inox-201-va-304.html"><img
-                                        onerror="this.src='thumbs/380x230x2/assets/images/noimage.png' "
-                                        src="thumbs/380x230x1/upload/news/304-201-4348.jpg" /></a>
-                            </div>
-                            <!-- Post Content-->
-                            <div class="post-content">
-
-                                <h3 class="title"><a href="so-sanh-ve-inox-201-va-304.html"
-                                        title="So sánh về inox 201 và 304">So sánh về inox 201 và 304</a></h3>
-                                <div class="time-main d-block d-sm-none"><i
-                                        class="fas fa-calendar-week"></i><span>18-04-2023</span></div>
-                                <p class="description text-split">Trong tình hình giá của Niken tăng liên tục thì những
-                                    dòng Inox chứa hàm lượng Niken thấp, giá cả thấp và ổn định mang lại sự hấp dẫn thực
-                                    sự. Và Inox 201 là một lựa chọn phù hợp, mác Inox ngày càng được dần chiếm được
-                                    nhiều thị trường, những nơi mà Inox 304 và Inox 301 là lựa chọn chủ yếu.</p>
-                                <div class="post-meta "><small><i class="icon-calendar-1"></i> 18-04-2023</small></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-4 col-12 mb-3 default">
-                        <div class="post-module">
-                            <!-- Thumbnail-->
-                            <div class="thumbnail mb-2">
-                                <a href="tim-hieu-ve-thep-khong-gi-inox.html"><img
-                                        onerror="this.src='thumbs/380x230x2/assets/images/noimage.png' "
-                                        src="thumbs/380x230x1/upload/news/ky-hieu-thep-khong-gi-8474.jpg" /></a>
-                            </div>
-                            <!-- Post Content-->
-                            <div class="post-content">
-
-                                <h3 class="title"><a href="tim-hieu-ve-thep-khong-gi-inox.html"
-                                        title="Tìm hiểu về thép không gỉ Inox">Tìm hiểu về thép không gỉ Inox</a></h3>
-                                <div class="time-main d-block d-sm-none"><i
-                                        class="fas fa-calendar-week"></i><span>18-04-2023</span></div>
-                                <p class="description text-split">Nhờ những đặc tính nổi bật, ngày nay, thép không gỉ
-                                    được ứng dụng rộng rãi trong công nghiệp, y tế, đời sống … Tuy nhiên, vì cái tên
-                                    “không gỉ”, đây cũng làm loại vật liệu hay được lạm dụng vì nhiều mục đích khác
-                                    nhau, nhất là đối với các ứng dụng trong đời sống.</p>
-                                <div class="post-meta "><small><i class="icon-calendar-1"></i> 18-04-2023</small></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-4 col-12 mb-3 default">
-                        <div class="post-module">
-                            <!-- Thumbnail-->
-                            <div class="thumbnail mb-2">
-                                <a href="giai-phap-chan-chieu-gian-lan-thue-qua-ap-ma-mat-hang-thep.html"><img
-                                        onerror="this.src='thumbs/380x230x2/assets/images/noimage.png' "
-                                        src="thumbs/380x230x1/upload/news/giai-phap-chan-gian-lan-thue-nganh-thep-inox-3569.jpg" /></a>
-                            </div>
-                            <!-- Post Content-->
-                            <div class="post-content">
-
-                                <h3 class="title"><a
-                                        href="giai-phap-chan-chieu-gian-lan-thue-qua-ap-ma-mat-hang-thep.html"
-                                        title="Giải pháp “chặn” chiêu gian lận thuế qua áp mã mặt hàng thép">Giải pháp
-                                        “chặn” chiêu gian lận thuế qua áp mã mặt hàng thép</a></h3>
-                                <div class="time-main d-block d-sm-none"><i
-                                        class="fas fa-calendar-week"></i><span>18-04-2023</span></div>
-                                <p class="description text-split">Mới đây, Cục Hải quan Đồng Nai đã đề xuất Tổng cục Hải
-                                    quan một giải pháp nhằm ngăn chặn thủ đoạn doanh nghiệp khai báo mặt hàng thép cán
-                                    nguội là mặt hàng thép cán nóng để gian lận thuế suất.</p>
-                                <div class="post-meta "><small><i class="icon-calendar-1"></i> 18-04-2023</small></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-4 col-12 mb-3 default">
-                        <div class="post-module">
-                            <!-- Thumbnail-->
-                            <div class="thumbnail mb-2">
-                                <a href="them-du-an-thep-duoc-quy-hoach.html"><img
-                                        onerror="this.src='thumbs/380x230x2/assets/images/noimage.png' "
-                                        src="thumbs/380x230x1/upload/news/quy-hoach-nganh-thep-3750.jpg" /></a>
-                            </div>
-                            <!-- Post Content-->
-                            <div class="post-content">
-
-                                <h3 class="title"><a href="them-du-an-thep-duoc-quy-hoach.html"
-                                        title="Thêm dự án thép được quy hoạch">Thêm dự án thép được quy hoạch</a></h3>
-                                <div class="time-main d-block d-sm-none"><i
-                                        class="fas fa-calendar-week"></i><span>18-04-2023</span></div>
-                                <p class="description text-split">Thủ tướng Chính phủ Nguyễn Tấn Dũng vừa chấp thuận chủ
-                                    trương bổ sung dự án nhà máy luyện cán thép chất lượng cao tại tỉnh Ninh Bình vào
-                                    Quy hoạch phát triển ngành thép giai đoạn 2007 – 2015, có xét đến năm 2025.</p>
-                                <div class="post-meta "><small><i class="icon-calendar-1"></i> 18-04-2023</small></div>
-                            </div>
-                        </div>
-                    </div>
+                    {{/each}}
+                    
                     <div class="clear"></div>
                     <div class="pagination-home"></div>
                 </div>

@@ -5,8 +5,10 @@ class HomeController{
     home(req, res, next){
         res.render('home', {
             shop: req.shop,
-            cate: req.cate
+            cate: req.cate,
+            pageHome: true,
         })
+        req.success = true
     }
 }
 

@@ -1,5 +1,5 @@
 const Product = require("../../models/Product")
-
+const pageProduct = true
 
 class ProductController{
     
@@ -31,7 +31,7 @@ class ProductController{
                 cate: req.cate,
                 products: productArr,
                 pagination,
-                next, last,
+                next, last, pageProduct,
             })
         }catch(error){
             next(error)
@@ -57,7 +57,7 @@ class ProductController{
                 shop: req.shop,
                 cate: req.cate,
                 product: product.toObject(),
-                sameProducts: sameProductsArr,
+                sameProducts: sameProductsArr, pageProduct,
             })
 
             // res.json(product)

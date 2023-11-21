@@ -6,8 +6,7 @@
             <li class="breadcrumb-item "><a class="text-decoration-none" href="/tin-tuc"><span>Tin tức</span></a>
             </li>
             <li class="breadcrumb-item active"><a class="text-decoration-none"
-                    href="giai-phap-chan-chieu-gian-lan-thue-qua-ap-ma-mat-hang-thep.html"><span>Giải pháp “chặn” chiêu
-                        gian lận thuế qua áp mã mặt hàng thép</span></a></li>
+                    href="/tin-tuc/{{blog.slug}}"><span>{{blog.title}}</span></a></li>
         </ol>
         <script
             type="application/ld+json">{"@context": "https://schema.org","@type": "BreadcrumbList","itemListElement": [{"@type":"ListItem","position":1,"name":"Tin t\u1ee9c","item":"https:\/\/cokhinguyenhungdalat.com\/tin-tuc"},{"@type":"ListItem","position":2,"name":"Gi\u1ea3i ph\u00e1p \u201cch\u1eb7n\u201d chi\u00eau gian l\u1eadn thu\u1ebf qua \u00e1p m\u00e3 m\u1eb7t h\u00e0ng th\u00e9p","item":"https:\/\/cokhinguyenhungdalat.com\/giai-phap-chan-chieu-gian-lan-thue-qua-ap-ma-mat-hang-thep"}]}</script>
@@ -20,64 +19,56 @@
 
             <div class=" inner-page mb-3">
                 <div class="title-main"><span><span>
-                            <h1>Giải pháp “chặn” chiêu gian lận thuế qua áp mã mặt hàng thép</h1>
+                            <h1>{{blog.title}}</h1>
                         </span></span></div>
-                <div class="time-main"><i class="icon-calendar-1"></i><span>Ngày đăng: 18/04/2023 11:39 PM</span></div>
+                <div class="time-main"><i class="icon-calendar-1"></i><span>Ngày đăng: {{shortDatetime
+                        blog.createdAt}}</span></div>
 
 
                 <div class="meta-toc">
                     <div class="box-readmore">
-                        <ul class="toc-list" data-toc="article" data-toc-headings="h1, h2, h3"></ul>
+                        <ul class="toc-list" data-toc="article" data-toc-headings="h1, h2, h3">{{shop.name}}</ul>
                     </div>
                 </div>
                 <div class="content-main w-clear" id="toc-content">
-                    <p style="text-align: justify;"><span style="line-height:1.5;"><span style="font-size:14px;"><span
-                                    style="font-family:Arial,Helvetica,sans-serif;">Hiện nay, thuế suất 2 mặt hàng thép
-                                    cán nóng (nhóm 7208), thép cán nguội (nhóm 7209) có sự chênh lệch lớn (0% và 7%).
-                                    Tuy nhiên, việc phân biệt 2 mặt hàng này chỉ có thể thực hiện thông qua các Trung
-                                    tâm phân tích, phân loại hàng hóa, khó có thể phân biệt bằng phương pháp kiểm tra
-                                    thông thường. Vì vậy, một số doanh nghiệp có thể lợi dụng đặc tính dễ nhầm lẫn này
-                                    để khai báo thép cán nguội thành thép cán nóng nhằm gian lận một lượng tiền thuế
-                                    lớn.</span></span></span></p>
+                    {{#each blog.content}}
+                        <p style="text-align: justify;">
+                            <span style="line-height:1.5;">
+                                <span style="font-size:14px;">
+                                    <strong>{{this.header}}</strong>
+                                </span>
+                            </span>
+                        </p>
+                        {{#each this.paragraph}}
+                            <p style="text-align: justify;">
+                            <span style="line-height:1.5;">
+                                <span style="font-size:14px;">
+                                    <span style="font-family:Arial,Helvetica,sans-serif;">{{this}}</span>
+                                </span>
+                            </span>
+                        </p>
+                        {{/each}}
+                    {{/each}}
+                    
 
-                    <p style="text-align: justify;"><span style="line-height:1.5;"><span style="font-size:14px;"><span
-                                    style="font-family:Arial,Helvetica,sans-serif;">Để ngăn chặn thủ đoạn gian lận này,
-                                    Cục Hải quan Đồng Nai đã kiến nghị Tổng cục Hải quan điều chỉnh mức thuế suất thuế
-                                    nhập khẩu của mặt hàng thép cán nóng tăng từ 0% lên thành 7%, bằng mức thuế suất của
-                                    mặt hàng thép cán nguội để tránh doanh nghiệp lợi dụng gian lận gây thất thoát cho
-                                    Ngân sách Nhà nước, ảnh hưởng đến thị trường kinh doanh thép trên toàn quốc và vẫn
-                                    phù hợp với cam kết của WTO năm 2012 và khung thuế suất theo Nghị quyết 295 của
-                                    Chính phủ.</span></span></span></p>
+                    <h2>{{shop.name}}</h2>
 
-                    <p style="text-align: justify;"><span style="line-height:1.5;"><span style="font-size:14px;"><span
-                                    style="font-family:Arial,Helvetica,sans-serif;">Theo cam kết WTO năm 2012, mặt hàng
-                                    thép cán nóng có mức thuế suất từ 10% đến 12%, thép cán nguội 7%. Trong khi đó, theo
-                                    khung thuế suất Nghị quyết 295 thì mặt hàng thép cán nóng có mức thuế suất từ 0 đến
-                                    10%, thép cán nguội từ 0 đến 9%.</span></span></span></p>
+                    <p><strong>Địa chỉ:</strong> <a href="https://goo.gl/maps/Dm7U4iQgL8jaavd67">{{shop.address.street}},
+                            {{shop.address.ward}}, {{shop.address.district}}, {{shop.address.city}}</a></p>
 
-                    <p style="text-align: justify;"> </p>
+                    <p><strong>Email:</strong>{{shop.email}}</p>
 
-                    <p style="text-align:justify;"><span style="font-family:Arial,Helvetica,sans-serif;"><span
-                                style="font-size:14px;">Đặt hàng các sản phẩm chuyên inox tại Đà Lạt, liên hệ
-                                ngay: </span></span></p>
-
-                    <p style="text-align:justify;"> </p>
-
-                    <h2>CÔNG TY TNHH CƠ KHÍ NGUYÊN HÙNG</h2>
-
-                    <p><strong>Địa chỉ:</strong> <a href="https://goo.gl/maps/Dm7U4iQgL8jaavd67">216/11 Nguyên Tử Lực,
-                            Phường 8, Thành phố Đà Lạt, Tỉnh Lâm Đồng</a></p>
-
-                    <p><strong>Email:</strong> cokhinguyenhungdalat@gmail.com</p>
-
-                    <p><strong>SĐT liên hệ: </strong><a href="http://tel:0913953574">0913 953 574</a> - 0385 09 77 71
+                    <p><strong>SĐT liên hệ: </strong>
+                    {{#each shop.phone}}
+                        - <a href="http://tel:{{this}}">{{this}}</a>
+                    {{/each}}
                     </p>
 
-                    <p><strong>Zalo</strong>: <a href="https://zalo.me/0913953574">0913953574</a></p>
+                    <p><strong>Zalo</strong>: <a target="_blank" href="{{shop.social.zalo}}">Liên hệ</a></p>
 
-                    <p><strong>Website</strong>: <a href="/">www.cokhinguyenhungdalat.com</a></p>
+                    <p><strong>Website</strong>: <a href="/">{{shop.social.website}}</a></p>
 
-                    <p><strong>Giờ làm việc</strong>: Thứ 2 - CN (7h30-21h00)</p>
+                    <p><strong>Giờ làm việc</strong>: {{shop.worktime}}</p>
                 </div>
                 <div class="tags-pro-detail w-clear">
                 </div>
@@ -96,21 +87,11 @@
                 <div class="share othernews">
                     <b>Bài viết khác:</b>
                     <ul class="list-news-other">
-                        <li><a class="text-decoration-none" href="phan-biet-inox-chat-luong-tot-va-inox-ma.html"
+                        {{#each otherBlogs}}
+                        <li><a class="text-decoration-none" href="/tin-tuc/{{this.slug}}"
                                 title="Phân biệt inox chất lượng tốt và inox mạ">
-                                Phân biệt inox chất lượng tốt và inox mạ - 15/05/2023 </a></li>
-                        <li><a class="text-decoration-none" href="phan-biet-cac-loai-inox.html"
-                                title="Phân biệt các loại inox">
-                                Phân biệt các loại inox - 18/04/2023 </a></li>
-                        <li><a class="text-decoration-none" href="so-sanh-ve-inox-201-va-304.html"
-                                title="So sánh về inox 201 và 304">
-                                So sánh về inox 201 và 304 - 18/04/2023 </a></li>
-                        <li><a class="text-decoration-none" href="tim-hieu-ve-thep-khong-gi-inox.html"
-                                title="Tìm hiểu về thép không gỉ Inox">
-                                Tìm hiểu về thép không gỉ Inox - 18/04/2023 </a></li>
-                        <li><a class="text-decoration-none" href="them-du-an-thep-duoc-quy-hoach.html"
-                                title="Thêm dự án thép được quy hoạch">
-                                Thêm dự án thép được quy hoạch - 18/04/2023 </a></li>
+                                {{this.title}} - {{shortDate this.createdAt}} </a></li>
+                        {{/each}}
                     </ul>
                     <div class="pagination-home"></div>
                 </div>

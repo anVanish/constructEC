@@ -17,25 +17,24 @@
         <div class="content-main w-clear">
             <div class="top-contact">
                 <div class="article-contact">
-                    <h2><span style="color:#0000cc;">CÔNG TY TNHH CƠ KHÍ NGUYÊN HÙNG</span></h2>
+                    <h2><span style="color:#0000cc;">{{shop.name}}</span></h2>
 
                     <p><span style="font-size:14px;"><strong>Địa chỉ:</strong> <a
-                                href="https://goo.gl/maps/txomUtwKQUnXEUnh9">216/11 Nguyên Tử Lực, Phường 8, Thành phố
-                                Đà Lạt, Tỉnh Lâm Đồng</a></span></p>
+                                href="https://goo.gl/maps/txomUtwKQUnXEUnh9">{{showAddr shop.address}}</a></span></p>
 
                     <p><span style="font-size:14px;"><strong
-                                style="font-size: 16px;">Email:</strong> cokhinguyenhungdalat@gmail.com</span></p>
+                                style="font-size: 16px;">Email:</strong>{{shop.email}}</span></p>
 
-                    <p><span style="font-size:14px;"><strong>SĐT liên hệ: </strong>0913 953 574 - 0385 09 77 71</span>
+                    <p><span style="font-size:14px;"><strong>SĐT liên hệ: </strong>{{showPhone shop.phone}}</span>
                     </p>
 
                     <p><span style="font-size:14px;"><strong>Zalo</strong>: <a
-                                href="https://zalo.me/0913953574">0913953574</a></span></p>
+                                href="{{shop.social.zalo}}" target="_blank">Liên hệ ngay</a></span></p>
 
-                    <p><span style="font-size:14px;"><b>Website</b>: <a href="/">www.cokhinguyenhungdalat.com</a></span>
+                    <p><span style="font-size:14px;"><b>Website</b>: <a href="/">{{shop.social.website}}</a></span>
                     </p>
 
-                    <p><span style="font-size:14px;"><strong>Giờ làm việc</strong>: Thứ 2 - CN (7h30-21h00)</span></p>
+                    <p><span style="font-size:14px;"><strong>Giờ làm việc</strong>: {{shop.worktime}}</span></p>
                 </div>
                 <form class="form-contact validation-contact" novalidate method="post" action="index.html"
                     enctype="multipart/form-data">
