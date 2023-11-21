@@ -1,4 +1,3 @@
-const Shop = require('../../models/Shop')
 
 class GeneralController{
 
