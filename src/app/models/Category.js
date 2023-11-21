@@ -6,6 +6,7 @@ const Categories = new mongoose.Schema({
     slug: {type: String, unique: true, default: function(){
         return slugify(`${this.name}-${this._id.toString().slice(-5)}`, { lower: true, locale: 'vi', trim: true })
     }},
+    desc: {type: String}
 })
 
 

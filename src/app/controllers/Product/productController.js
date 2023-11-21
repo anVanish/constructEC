@@ -44,7 +44,7 @@ class ProductController{
         try{
             const product = await Product.findOne({slug})
                 .populate('categoryId', 'name slug')
-            if (!product) next()
+            if (!product) return next()
 
             product.views += 1
             await product.save()

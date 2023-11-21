@@ -25,7 +25,7 @@ class NewsController{
         const slug = req.params.slug
         try{
             const blog = await Blog.findOne({slug})
-            if (!blog) next()
+            if (!blog) return next()
 
             const blogObject = {
                 ...blog.toObject(),

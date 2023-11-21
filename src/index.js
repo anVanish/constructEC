@@ -52,6 +52,9 @@ app.engine('hbs', hbs.engine({
                     string += ' - '
             }
             return string
+        },
+        increase: (index) => {
+            return index + 1
         }
     }
 })) //define and config

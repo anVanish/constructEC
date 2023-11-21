@@ -19,8 +19,8 @@ exports.products = [{
     img: ['https://cokhinguyenhungdalat.com/thumbs/540x540x1/upload/product/tu-inox-ham-nong-thuc-an-5761.jpg', 'https://cokhinguyenhungdalat.com/thumbs/540x540x1/upload/product/tu-inox-ham-nong-thuc-an-da-lat-1215.jpg'],
     categoryId: new ObjectId('655bfbf70cf05ce4376929d1')
 }, {
-    name: 'Tủ inox hâm nóng thức ăn',
-    img: ['https://cokhinguyenhungdalat.com/thumbs/540x540x1/upload/product/tu-inox-ham-nong-thuc-an-5761.jpg', 'https://cokhinguyenhungdalat.com/thumbs/540x540x1/upload/product/tu-inox-ham-nong-thuc-an-da-lat-1215.jpg'],
+    name: 'Tủ nấu cơm công nghiệp cao cấp đa năng',
+    img: ['https://cokhinguyenhungdalat.com/thumbs/540x540x1/upload/product/tu-nau-com-cong-nghiep-cao-cap-da-nang-7327.jpg'],
     categoryId: new ObjectId('655bfbf70cf05ce4376929d1')
 }, {
     name: 'Nồi điện cao cấp inox 304 thép không rỉ',
