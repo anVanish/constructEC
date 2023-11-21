@@ -16,8 +16,10 @@ const Shop = new mongoose.Schema({
     social: {
         zalo: {type: String},
         facebook: {type: String},
-        website: {type: String}
-    }
+        website: {type: String},
+    },
+    mainImg: [{type: String}],
+    about: {type: String}
 })
 
 module.exports = mongoose.model('shop', Shop)

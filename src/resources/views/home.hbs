@@ -1,18 +1,12 @@
 <div class="slideshow">
 
     <div id="mainSlider" class="owl-carousel">
-        <div class="item">
-            <a href="/" target="_blank" title=""><img
-                    src="thumbs/1920x0x1/upload/photo/slider-38340.jpg" /></a>
-        </div><!-- /.item -->
-        <div class="item">
-            <a href="/" target="_blank" title=""><img
-                    src="thumbs/1920x0x1/upload/photo/slider-19820.jpg" /></a>
-        </div><!-- /.item -->
-        <div class="item">
-            <a href="/" target="_blank" title=""><img
-                    src="thumbs/1920x0x1/upload/photo/slider-92500.jpg" /></a>
-        </div><!-- /.item -->
+        {{#each shop.mainImg}}
+        <div class="item" style="width: 100%">
+            <a href="/" title=""><img
+                    src="{{this}}"/></a>
+        </div>
+        {{/each}}
     </div><!-- end main-slider -->
 </div><!-- end slideshow-->
 
@@ -23,20 +17,10 @@
                 <div class="col-12">
                     <div class="title">
 
-                        <div class="big-title">GIỚI THIỆU {{shop.name}}</div>
+                        <div class="big-title">GIỚI THIỆU {{uppercase shop.name}}</div>
                     </div>
                     <div class="content">
-                        <p style="text-align: center;">Cơ khí
-                            Nguyên Hùng chuyên sản xuất và cung cấp nhôm kính,
-                            inox, cửa nhôm, nồi inox, tủ nấu công nghiệp, kệ tủ
-                            quầy bếp inox, thiết bị bếp inox, cầu thang, lan can
-                            inox, cửa kéo Đài Loan, tư vấn thiết kế nhà tiền chế
-                            ... tại Đà Lạt. Với nhiều năm kinh nghiệm nhiều năm
-                            trong lĩnh vực cơ khí - xây dựng, đội ngũ kỹ thuật
-                            viên được đào tạo bài bản, kinh nghiệm, tay nghề
-                            cao, tâm huyết tạo ra sản phẩm. Chúng tôi tự hào
-                            mang đến những sản phẩm tốt nhất cho quý khách tại
-                            Thành phố Đà Lạt.</p>
+                        <p style="text-align: center;">{{shop.about}}</p>
                     </div>
                 </div>
 
@@ -170,9 +154,7 @@
                             <div class="video trigger-video-change" data-target="#video-frame" data-id="N36chN7a-aU">
 
                                 <img src="https://img.youtube.com/vi/N36chN7a-aU/0.jpg" />
-
                             </div>
-
                         </div>
                     </div>
                 </div>

@@ -55,6 +55,9 @@ app.engine('hbs', hbs.engine({
         },
         increase: (index) => {
             return index + 1
+        },
+        uppercase: (text) => {
+            return text.toUpperCase()
         }
     }
 })) //define and config
