@@ -72,13 +72,9 @@
                 <li><a class="transition" href="/san-pham" title="SẢN PHẨM">SẢN
                         PHẨM</a>
                     <ul>
-                        <li><a href="cua-nhom-xingfa-cua-keo-dai-loan.html">CỬA
-                                NHÔM XINGFA - CỬA KÉO ĐÀI LOAN</a></li>
-                        <li><a href="noi-inox-tu-nau-com-cong-nghiep.html">NỒI INOX - TỦ NẤU CƠM CÔNG NGHIỆP</a></li>
-                        <li><a href="ke-tu-quay-bep-inox.html">KỆ TỦ QUẦY BẾP INOX</a></li>
-                        <li><a href="cau-thang-lan-can.html">CẦU THANG - LAN CAN</a></li>
-                        <li><a href="ban-ghe-tu-inox-khong-ri.html">BÀN GHẾ TỦ INOX KHÔNG RỈ</a></li>
-                        <li><a href="nha-tien-che.html">NHÀ TIỀN CHẾ</a></li>
+                        {{#each cate}}
+                        <li><a href="/cate/{{this.slug}}">{{this.name}}</a></li>
+                        {{/each}}
                     </ul>
                 </li>
                 <li><a class="transition" href="/dich-vu" title="Dịch vụ">Dịch

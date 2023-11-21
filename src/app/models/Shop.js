@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const Shop = mongoose.Schema({
+const Shop = new mongoose.Schema({
     name: {type: String},
     logo: {type: String},
     address:  {

@@ -4,13 +4,15 @@ class NewsController{
     listNews(req, res, next){
         res.render('news/listNews', {
             shop: req.shop,
+            cate: req.cate,
         })
     }
 
     //GET /tin-tuc/:slug
     detailNews(req, res, next){
         res.render('news/detailNews', {
-            shop: req.shop
+            shop: req.shop,
+            cate: req.cate,
         })
     }
 }

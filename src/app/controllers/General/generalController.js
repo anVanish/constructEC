@@ -6,21 +6,24 @@ class GeneralController{
     about(req, res, next){
         // const {desc, address, phone, name} = shop
         res.render('general/about', {
-            shop: req.shop
+            shop: req.shop,
+            cate: req.cate,
         })
     }
 
     //GET /lien-he
     contact(req, res, next){
         res.render('general/contact', {
-            shop: req.shop
+            shop: req.shop,
+            cate: req.cate,
         })
     }
 
     //GET /cong-trinh
     construct(req, res, next){
         res.render('general/construct', {
-            shop: req.shop
+            shop: req.shop,
+            cate: req.cate,
         })
     }
 

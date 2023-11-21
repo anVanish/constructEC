@@ -3,7 +3,10 @@
 class HomeController{
     //GET /
     home(req, res, next){
-        res.render('home')
+        res.render('home', {
+            shop: req.shop,
+            cate: req.cate
+        })
     }
 }
 
