@@ -1,66 +1,13 @@
-
-<div class="top-header d-block d-sm-none">
-    <div class="container">
-        <div class="row align-items-center justify-content-between">
-
-            <div class="col-3 col-md-2  logo-col">
-                <div class="pr-3 pr-sm-0">
-                    <a href="index.html" class="col-auto"><img src="thumbs/0x100x1/upload/photo/logo-up-4490.jpg" /></a>
-                </div>
-            </div>
-            <div class="col-5 hotline-mobile">
-                <a href="tel:0913953574"><i class="fal fa-phone-square-alt"></i>&nbsp;0913 953 574</a>
-            </div>
-
-            <div class="col-4 d-block d-sm-none">
-
-                <div class="menu-res">
-                    <div class="menu-bar-res">
-                        <a href="javascript:void(0)" class="trigger-search"><i class="fal fa-search"></i></a>
-                        <a id="hamburger" href="index.html#menu" title="Menu"><i class="fal fa-bars"></i></a>
-                    </div>
-                </div>
-                <nav id="menu">
-                    <ul>
-                    </ul>
-                </nav>
-            </div>
-
-        </div>
-    </div>
-    <div class="search-mobile-custom">
-
-        <div class="row align-items-center justify-content-between">
-
-            <div class="form-search ">
-                <form class="top-form" action="https://cokhinguyenhungdalat.com/search.html">
-
-                    <input name="keyword" class="place-white" placeholder="Tìm kiếm ..." required value="" />
-
-
-                </form>
-            </div>
-
-
-
-
-        </div>
-        <span class="closex"><i class="fal fa-window-close"></i></span>
-    </div>
-</div>
-
-
-
-</div>
-
-
 <div class="breadCrumbs">
     <div class="container">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a class="text-decoration-none" href="index.html"><span>Trang chủ</span></a>
+            <li class="breadcrumb-item"><a class="text-decoration-none" href="/"><span>Trang chủ</span></a>
             </li>
-            <li class="breadcrumb-item active"><a class="text-decoration-none" href="san-pham.html"><span>Sản
+            <li class="breadcrumb-item active"><a class="text-decoration-none" href="/san-pham"><span>Sản
                         phẩm</span></a></li>
+            {{#if isCate}}
+            <li class="breadcrumb-item active"><a class="text-decoration-none" href="{{currentCate.slug}}"><span>{{currentCate.name}}</span></a>
+            {{/if}}
         </ol>
         <script
             type="application/ld+json">{"@context": "https://schema.org","@type": "BreadcrumbList","itemListElement": [{"@type":"ListItem","position":1,"name":"S\u1ea3n ph\u1ea9m","item":"https:\/\/cokhinguyenhungdalat.com\/san-pham"}]}</script>
@@ -79,14 +26,15 @@
 
                 <div class='row-z'>
                     <div class="row">
+                        {{#each products}}
                         <div class="col-6 col-sm-4 col-md-3 col-lg-3 mb-4">
                             <div class="product grid">
-                                <a class="box-product text-decoration-none" href="tu-inox-ham-nong-thuc-an.html"
-                                    title="Tủ inox hâm nóng thức ăn">
+                                <a class="box-product text-decoration-none" href="/san-pham/{{this.slug}}"
+                                    title="{{this.name}}">
                                     <p class="pic-product scale-img"><img
                                             onerror="this.src='thumbs/360x360x2/assets/images/noimage.png';"
-                                            src="thumbs/360x360x1/upload/product/tu-inox-ham-nong-thuc-an-5761.jpg"
-                                            alt="Tủ inox hâm nóng thức ăn" /></p>
+                                            src="{{this.img.[0]}}"
+                                            alt="{{this.name}}" /></p>
 
                                 </a>
                                 <div class="info-product">
@@ -94,11 +42,13 @@
                                         <div class="info1">
                                             <h3 class="name-product "> <a class="text-decoration-none"
                                                     href="tu-inox-ham-nong-thuc-an.html"
-                                                    title="Tủ inox hâm nóng thức ăn">Tủ inox hâm nóng thức ăn</a></h3>
+                                                    title="{{this.name}}">{{this.name}}</a></h3>
                                             <p class="price-product">
-                                                <span class="price-new">Liên hệ: <span><a href="tel:0913953574">0913 953
-                                                            574</a> - <a href="tel:0385097771">0385 09 77
-                                                            71</a></span></span>
+                                                <span class="price-new">Liên hệ: <span>
+                                                    {{#each ../shop.phone}}
+                                                    - <a href="tel:{{this}}">{{this}}</a>
+                                                    {{/each}}
+                                                    </span></span>
                                             </p>
                                         </div>
 
@@ -106,323 +56,20 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-6 col-sm-4 col-md-3 col-lg-3 mb-4">
-                            <div class="product grid">
-                                <a class="box-product text-decoration-none"
-                                    href="tu-nau-com-cong-nghiep-cao-cap-da-nang.html"
-                                    title="Tủ nấu cơm công nghiệp cao cấp đa năng">
-                                    <p class="pic-product scale-img"><img
-                                            onerror="this.src='thumbs/360x360x2/assets/images/noimage.png';"
-                                            src="thumbs/360x360x1/upload/product/tu-nau-com-cong-nghiep-cao-cap-da-nang-7327.jpg"
-                                            alt="Tủ nấu cơm công nghiệp cao cấp đa năng" /></p>
-
-                                </a>
-                                <div class="info-product">
-                                    <div class="wrap-info">
-                                        <div class="info1">
-                                            <h3 class="name-product "> <a class="text-decoration-none"
-                                                    href="tu-nau-com-cong-nghiep-cao-cap-da-nang.html"
-                                                    title="Tủ nấu cơm công nghiệp cao cấp đa năng">Tủ nấu cơm công
-                                                    nghiệp cao cấp đa năng</a></h3>
-                                            <p class="price-product">
-                                                <span class="price-new">Liên hệ: <span><a href="tel:0913953574">0913 953
-                                                            574</a> - <a href="tel:0385097771">0385 09 77
-                                                            71</a></span></span>
-                                            </p>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6 col-sm-4 col-md-3 col-lg-3 mb-4">
-                            <div class="product grid">
-                                <a class="box-product text-decoration-none"
-                                    href="noi-dien-cao-cap-inox-304-thep-khong-ri.html"
-                                    title="Nồi điện cao cấp inox 304 thép không rỉ">
-                                    <p class="pic-product scale-img"><img
-                                            onerror="this.src='thumbs/360x360x2/assets/images/noimage.png';"
-                                            src="thumbs/360x360x1/upload/product/noi-dien-cao-cap-inox-304-khong-ri-set-3147.jpg"
-                                            alt="Nồi điện cao cấp inox 304 thép không rỉ" /></p>
-
-                                </a>
-                                <div class="info-product">
-                                    <div class="wrap-info">
-                                        <div class="info1">
-                                            <h3 class="name-product "> <a class="text-decoration-none"
-                                                    href="noi-dien-cao-cap-inox-304-thep-khong-ri.html"
-                                                    title="Nồi điện cao cấp inox 304 thép không rỉ">Nồi điện cao cấp
-                                                    inox 304 thép không rỉ</a></h3>
-                                            <p class="price-product">
-                                                <span class="price-new">Liên hệ: <span><a href="tel:0913953574">0913 953
-                                                            574</a> - <a href="tel:0385097771">0385 09 77
-                                                            71</a></span></span>
-                                            </p>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6 col-sm-4 col-md-3 col-lg-3 mb-4">
-                            <div class="product grid">
-                                <a class="box-product text-decoration-none" href="bep-inox-3-hong-loai-thap.html"
-                                    title="Bếp inox 3 họng loại thấp">
-                                    <p class="pic-product scale-img"><img
-                                            onerror="this.src='thumbs/360x360x2/assets/images/noimage.png';"
-                                            src="thumbs/360x360x1/upload/product/bep-3-hong-loai-thap-3446.JPG"
-                                            alt="Bếp inox 3 họng loại thấp" /></p>
-
-                                </a>
-                                <div class="info-product">
-                                    <div class="wrap-info">
-                                        <div class="info1">
-                                            <h3 class="name-product "> <a class="text-decoration-none"
-                                                    href="bep-inox-3-hong-loai-thap.html"
-                                                    title="Bếp inox 3 họng loại thấp">Bếp inox 3 họng loại thấp</a></h3>
-                                            <p class="price-product">
-                                                <span class="price-new">Liên hệ: <span><a href="tel:0913953574">0913 953
-                                                            574</a> - <a href="tel:0385097771">0385 09 77
-                                                            71</a></span></span>
-                                            </p>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6 col-sm-4 col-md-3 col-lg-3 mb-4">
-                            <div class="product grid">
-                                <a class="box-product text-decoration-none" href="ban-bep-inox-co-tu.html"
-                                    title="Bàn bếp inox có tủ">
-                                    <p class="pic-product scale-img"><img
-                                            onerror="this.src='thumbs/360x360x2/assets/images/noimage.png';"
-                                            src="thumbs/360x360x1/upload/product/ban-bep-inox-co-tu-8007.jpg"
-                                            alt="Bàn bếp inox có tủ" /></p>
-
-                                </a>
-                                <div class="info-product">
-                                    <div class="wrap-info">
-                                        <div class="info1">
-                                            <h3 class="name-product "> <a class="text-decoration-none"
-                                                    href="ban-bep-inox-co-tu.html" title="Bàn bếp inox có tủ">Bàn bếp
-                                                    inox có tủ</a></h3>
-                                            <p class="price-product">
-                                                <span class="price-new">Liên hệ: <span><a href="tel:0913953574">0913 953
-                                                            574</a> - <a href="tel:0385097771">0385 09 77
-                                                            71</a></span></span>
-                                            </p>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6 col-sm-4 col-md-3 col-lg-3 mb-4">
-                            <div class="product grid">
-                                <a class="box-product text-decoration-none" href="cau-thang-kinh-inox.html"
-                                    title="Cầu thang kính inox">
-                                    <p class="pic-product scale-img"><img
-                                            onerror="this.src='thumbs/360x360x2/assets/images/noimage.png';"
-                                            src="thumbs/360x360x1/upload/product/cau-thang-kinh-inox-8345.jpg"
-                                            alt="Cầu thang kính inox" /></p>
-
-                                </a>
-                                <div class="info-product">
-                                    <div class="wrap-info">
-                                        <div class="info1">
-                                            <h3 class="name-product "> <a class="text-decoration-none"
-                                                    href="cau-thang-kinh-inox.html" title="Cầu thang kính inox">Cầu
-                                                    thang kính inox</a></h3>
-                                            <p class="price-product">
-                                                <span class="price-new">Liên hệ: <span><a href="tel:0913953574">0913 953
-                                                            574</a> - <a href="tel:0385097771">0385 09 77
-                                                            71</a></span></span>
-                                            </p>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6 col-sm-4 col-md-3 col-lg-3 mb-4">
-                            <div class="product grid">
-                                <a class="box-product text-decoration-none" href="cua-nhom-xingfa-cao-cap-4-canh.html"
-                                    title="Cửa nhôm xingfa cao cấp 4 cánh">
-                                    <p class="pic-product scale-img"><img
-                                            onerror="this.src='thumbs/360x360x2/assets/images/noimage.png';"
-                                            src="thumbs/360x360x1/upload/product/cua-nhom-xingfa-cao-cap-4353.jpg"
-                                            alt="Cửa nhôm xingfa cao cấp 4 cánh" /></p>
-
-                                </a>
-                                <div class="info-product">
-                                    <div class="wrap-info">
-                                        <div class="info1">
-                                            <h3 class="name-product "> <a class="text-decoration-none"
-                                                    href="cua-nhom-xingfa-cao-cap-4-canh.html"
-                                                    title="Cửa nhôm xingfa cao cấp 4 cánh">Cửa nhôm xingfa cao cấp 4
-                                                    cánh</a></h3>
-                                            <p class="price-product">
-                                                <span class="price-new">Liên hệ: <span><a href="tel:0913953574">0913 953
-                                                            574</a> - <a href="tel:0385097771">0385 09 77
-                                                            71</a></span></span>
-                                            </p>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6 col-sm-4 col-md-3 col-lg-3 mb-4">
-                            <div class="product grid">
-                                <a class="box-product text-decoration-none" href="tu-nau-com-cong-nghiep-100kg.html"
-                                    title="Tủ nấu cơm công nghiệp 100kg">
-                                    <p class="pic-product scale-img"><img
-                                            onerror="this.src='thumbs/360x360x2/assets/images/noimage.png';"
-                                            src="thumbs/360x360x1/upload/product/tu-nau-com-cong-nghiep-100kg-2459.jpg"
-                                            alt="Tủ nấu cơm công nghiệp 100kg" /></p>
-
-                                </a>
-                                <div class="info-product">
-                                    <div class="wrap-info">
-                                        <div class="info1">
-                                            <h3 class="name-product "> <a class="text-decoration-none"
-                                                    href="tu-nau-com-cong-nghiep-100kg.html"
-                                                    title="Tủ nấu cơm công nghiệp 100kg">Tủ nấu cơm công nghiệp
-                                                    100kg</a></h3>
-                                            <p class="price-product">
-                                                <span class="price-new">Liên hệ: <span><a href="tel:0913953574">0913 953
-                                                            574</a> - <a href="tel:0385097771">0385 09 77
-                                                            71</a></span></span>
-                                            </p>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6 col-sm-4 col-md-3 col-lg-3 mb-4">
-                            <div class="product grid">
-                                <a class="box-product text-decoration-none"
-                                    href="tu-hap-com-cong-nghiep-12-khay-nang-suat-cao.html"
-                                    title="Tủ hấp cơm công nghiệp 12 khay năng suất cao">
-                                    <p class="pic-product scale-img"><img
-                                            onerror="this.src='thumbs/360x360x2/assets/images/noimage.png';"
-                                            src="thumbs/360x360x1/upload/product/tu-hap-com-cong-nghiep-12-khay-nang-suat-cao-9100.jpg"
-                                            alt="Tủ hấp cơm công nghiệp 12 khay năng suất cao" /></p>
-
-                                </a>
-                                <div class="info-product">
-                                    <div class="wrap-info">
-                                        <div class="info1">
-                                            <h3 class="name-product "> <a class="text-decoration-none"
-                                                    href="tu-hap-com-cong-nghiep-12-khay-nang-suat-cao.html"
-                                                    title="Tủ hấp cơm công nghiệp 12 khay năng suất cao">Tủ hấp cơm công
-                                                    nghiệp 12 khay năng suất cao</a></h3>
-                                            <p class="price-product">
-                                                <span class="price-new">Liên hệ: <span><a href="tel:0913953574">0913 953
-                                                            574</a> - <a href="tel:0385097771">0385 09 77
-                                                            71</a></span></span>
-                                            </p>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6 col-sm-4 col-md-3 col-lg-3 mb-4">
-                            <div class="product grid">
-                                <a class="box-product text-decoration-none" href="tu-hap-com-cong-nghiep.html"
-                                    title="Tủ hấp cơm công nghiệp">
-                                    <p class="pic-product scale-img"><img
-                                            onerror="this.src='thumbs/360x360x2/assets/images/noimage.png';"
-                                            src="thumbs/360x360x1/upload/product/tu-hap-com-cong-nghiep-1504.jpg"
-                                            alt="Tủ hấp cơm công nghiệp" /></p>
-
-                                </a>
-                                <div class="info-product">
-                                    <div class="wrap-info">
-                                        <div class="info1">
-                                            <h3 class="name-product "> <a class="text-decoration-none"
-                                                    href="tu-hap-com-cong-nghiep.html" title="Tủ hấp cơm công nghiệp">Tủ
-                                                    hấp cơm công nghiệp</a></h3>
-                                            <p class="price-product">
-                                                <span class="price-new">Liên hệ: <span><a href="tel:0913953574">0913 953
-                                                            574</a> - <a href="tel:0385097771">0385 09 77
-                                                            71</a></span></span>
-                                            </p>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6 col-sm-4 col-md-3 col-lg-3 mb-4">
-                            <div class="product grid">
-                                <a class="box-product text-decoration-none" href="quay-bep-inox.html"
-                                    title="Quầy bếp inox">
-                                    <p class="pic-product scale-img"><img
-                                            onerror="this.src='thumbs/360x360x2/assets/images/noimage.png';"
-                                            src="thumbs/360x360x1/upload/product/quay-bep-inox-304-9305.jpg"
-                                            alt="Quầy bếp inox" /></p>
-
-                                </a>
-                                <div class="info-product">
-                                    <div class="wrap-info">
-                                        <div class="info1">
-                                            <h3 class="name-product "> <a class="text-decoration-none"
-                                                    href="quay-bep-inox.html" title="Quầy bếp inox">Quầy bếp inox</a>
-                                            </h3>
-                                            <p class="price-product">
-                                                <span class="price-new">Liên hệ: <span><a href="tel:0913953574">0913 953
-                                                            574</a> - <a href="tel:0385097771">0385 09 77
-                                                            71</a></span></span>
-                                            </p>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6 col-sm-4 col-md-3 col-lg-3 mb-4">
-                            <div class="product grid">
-                                <a class="box-product text-decoration-none" href="noi-nau-pho-80l.html"
-                                    title="Nồi nấu phở 80l">
-                                    <p class="pic-product scale-img"><img
-                                            onerror="this.src='thumbs/360x360x2/assets/images/noimage.png';"
-                                            src="thumbs/360x360x1/upload/product/noi-nau-chao-3014.jpg"
-                                            alt="Nồi nấu phở 80l" /></p>
-
-                                </a>
-                                <div class="info-product">
-                                    <div class="wrap-info">
-                                        <div class="info1">
-                                            <h3 class="name-product "> <a class="text-decoration-none"
-                                                    href="noi-nau-pho-80l.html" title="Nồi nấu phở 80l">Nồi nấu phở
-                                                    80l</a></h3>
-                                            <p class="price-product">
-                                                <span class="price-new">Liên hệ: <span><a href="tel:0913953574">0913 953
-                                                            574</a> - <a href="tel:0385097771">0385 09 77
-                                                            71</a></span></span>
-                                            </p>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        {{/each}}
                     </div>
 
                     <div class="clear"></div>
                     <div class="pagination-home">
                         <ul class='pagination pagination-sm justify-content-center mb-0'>
-                            <li class='page-item'><a class='page-link'>Page 1 / 4</a></li>
-                            <li class='page-item active'><a class='page-link'>1</a></li>
-                            <li class='page-item'><a class='page-link' href='san-pham@p=2.html'>2</a></li>
-                            <li class='page-item'><a class='page-link' href='san-pham@p=3.html'>3</a></li>
-                            <li class='page-item'><a class='page-link' href='san-pham@p=4.html'>4</a></li>
-                            <li class='page-item'><a class='page-link' href='san-pham@p=2.html'>Next</a></li>
-                            <li class='page-item'><a class='page-link' href='san-pham@p=4.html'>Last</a></li>
+                            <li class='page-item'><a class='page-link'>Page 1 / {{pagination.length}}</a></li>
+                            {{#each pagination}}
+                            <li class='page-item {{#if this.active}} active {{/if}}'><a class='page-link' 
+                            href= {{#if ../isCate}}"/danh-muc/{{../currentCate.slug}}?page={{this.page}}" {{else}}"/san-pham?page={{this.page}}" {{/if}}>{{this.page}}</a></li>
+                            {{/each}}
+                            
+                            <li class='page-item'><a class='page-link' href={{#if isCate}}"/danh-muc/{{currentCate.slug}}?page={{this.page}}" {{else}}'san-pham?page={{next}} ' {{/if}}>Next</a></li>
+                            <li class='page-item'><a class='page-link' href={{#if isCate}}"/danh-muc/{{currentCate.slug}}?page={{this.page}}" {{else}}'san-pham?page={{last}}{{/if}}'>Last</a></li>
                         </ul>
                     </div>
                 </div>
