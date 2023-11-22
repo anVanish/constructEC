@@ -60,6 +60,9 @@ app.engine('hbs', hbs.engine({
         uppercase: (text) => {
             return text.toUpperCase()
         },
+        checkAddButton: (index) => {
+            return index > 0
+        }
     }
 })) //define and config
 app.set('view engine', 'hbs') //set
