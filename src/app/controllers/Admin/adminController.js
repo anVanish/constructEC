@@ -27,6 +27,25 @@ class AdminController{
             next(error)
         }
     }
+
+    //GET /admin/webpage
+    webpage(req, res, next){
+        res.render('admin/webpage', {
+            isAdmin: true,
+            shop: req.shop,
+            admin: req.session.user,
+        })
+    }
+
+    //POST /admin/webpage
+    async updateWebpage(req, res, next){
+        try{
+            await Shop.findOneAndUpdate({_id: req.shop._id}, req.body)
+            res.redirect('back')            
+        }catch(error){
+            next(error)
+        }
+    }
 }
 
 module.exports = new AdminController()

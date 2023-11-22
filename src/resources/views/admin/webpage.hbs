@@ -1,0 +1,79 @@
+<div class="page-wrapper">
+    <div class="page-breadcrumb">
+        <div class="row align-items-center">
+            <div class="col-md-6 col-8 align-self-center">
+                <h3 class="page-title mb-0 p-0">Thông tin website</h3>
+                <div class="d-flex align-items-center">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/admin">Trang chủ</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Thông tin website</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-fluid">
+        
+        <!-- Row -->
+        <div class="row">
+            <!-- Column -->
+            <div class="col-lg-12 col-xlg-12 col-md-7">
+                <div class="card">
+                    <div class="card-body">
+                        <form method="POST" class="form-horizontal form-material mx-2">
+                            <div class="form-group mb-5">
+                                <label class="col-md-12 mb-0">Link Logo trang web</label>
+                                <div class="col-md-12">
+                                    <input type="text" name="logo" value="{{shop.logo}}"
+                                        class="form-control ps-0 form-control-line">
+                                    <div class="mt-4"> 
+                                        <img src="{{shop.logo}}"
+                                            class="" width="150" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group mb-5">
+                                <label class="col-md-12 mb-0">Link Ảnh bìa trang chủ</label>
+                                <div class="col-md-12">
+                                    <input type="text" name="mainImg" value="{{shop.mainImg}}"
+                                        class="form-control ps-0 form-control-line">
+                                    <div class="mt-4"> 
+                                        <img src="{{shop.mainImg}}"
+                                            class="" height="400px" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group mb-5">
+                                <label class="col-md-12 mb-0">Sơ lược về Cửa hàng (Hiển thị trên trang chủ)</label>
+                                <div class="col-md-12">
+                                    <textarea name="about" rows="5" class="form-control ps-0 form-control-line">{{shop.about}}</textarea>
+                                </div>
+                            </div>
+                            <div class="form-group mb-5">
+                                <label class="col-md-12 mb-0">Giới thiệu Cửa hàng (Hiển thị trên trang Giởi thiệu)</label>
+                                <div class="col-md-12">
+                                    <textarea name="desc" rows="5" class="form-control ps-0 form-control-line">{{shop.desc}}</textarea>
+                                </div>
+                            </div>
+                           
+                            <div class="form-group mb-5">
+                                <div class="col-sm-12 d-flex">
+                                    <button class="btn btn-success mx-auto mx-md-0 text-white" type="submit">Cập nhật Website</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- Column -->
+        </div>
+        
+    </div>
+    
+    <footer class="footer"> © 2021 Material Pro Admin by <a href="https://www.wrappixel.com/">wrappixel.com </a>
+    </footer>
+</div>
+
