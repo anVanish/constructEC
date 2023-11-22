@@ -36,6 +36,8 @@ router.post('/danh-muc/them/', cateController.actionAddCate)
 router.post('/danh-muc/sua/:slug', cateController.actionUpdateCate)
 router.post('/danh-muc/xoa/:slug', cateController.deleteCate)
 
+router.get('/dang-xuat', authController.logout)
+
 router.get('/', adminController.dashboard)
 router.post('/', adminController.updateDashboard)
 

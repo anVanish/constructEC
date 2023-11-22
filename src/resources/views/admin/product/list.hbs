@@ -21,9 +21,17 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Danh sách sản phẩm</h4>
+                        
+                        <form class="form-inline d-flex justify-content-center md-form form-sm mt-0">
+                            <i class="fas fa-search" aria-hidden="true" style="padding: .5rem;"></i>
+                            <input class="form-control form-control-sm ml-3 w-75" id="search-box" type="text" placeholder="Tìm kiếm sản phẩm" value="{{search}}" name="search"
+                                aria-label="Tìm kiếm sản phẩm">
+                        </form>
+
                         <div class="p-20">
                             <a href="/admin/san-pham/them" class="btn btn-primary text-white mt-4">Thêm sản phẩm</a>
                         </div>
+                        
                         <div class="table-responsive">
                             <table class="table user-table">
                                 <thead>
@@ -60,6 +68,18 @@
                                 </tbody>
                             </table>
                         </div>
+                        <nav aria-label="...">
+                            <ul class="pagination">
+                                <li class="page-item">
+                                <a class="page-link" href="{{prev}}" tabindex="-1" aria-disabled="true">Previous</a>
+                                </li>
+                                {{#each pagination}}
+                                <li class="page-item {{#if this.active}}active{{/if}}"><a class="page-link" href="{{this.page}}">{{this.page}}</a></li>
+                                {{/each}}
+                                <a class="page-link" href="{{next}}">Next</a>
+                                </li>
+                            </ul>
+                            </nav>
                     </div>
                 </div>
             </div>
@@ -106,6 +126,16 @@
                     deleteForm.submit()
             })
         })
+
+        const paginationLinks = document.querySelectorAll('.page-link');
+        paginationLinks.forEach(function (link) {
+            link.addEventListener('click', function (event) {
+                event.preventDefault();
+                const page = link.getAttribute('href');
+                const search = document.getElementById('search-box').value
+                window.location.href = `/admin/san-pham?search=${search}&page=${page}`
+            });
+        });
        
     })
 </script>

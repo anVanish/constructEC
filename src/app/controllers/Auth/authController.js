@@ -53,7 +53,8 @@ class AuthController{
 
     //GET /admin/dang-xuat
     logout(req, res, next){
-        res.render('admin/logout')
+        delete req.session.user
+        res.redirect('/admin/dang-nhap')
     }
 }
 

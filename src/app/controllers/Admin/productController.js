@@ -3,17 +3,38 @@ const Product = require('../../models/Product')
 class ProductController{
     //GET /admin/san-pham
     async product(req, res, next){
+        const search = req.query.search || ''
+        const limit = 12
+        const page = req.query.page || 1
         try{
-            const products = await Product.find({})
+            const products = await Product.find({'name': { $regex: `.*${search}.*`, $options: 'i' }})
                 .sort({updatedAt: -1})
-                .populate('categoryId', 'name slug')
+                .skip((page - 1) * limit)
                 .limit(7)
+                .populate('categoryId', 'name slug')
+
+            const total = await Product.countDocuments({'name': { $regex: `.*${search}.*`, $options: 'i' }})
             const productArr = products.map(item => item.toObject())
+            
+            const pagination = []
+            const totalPage = Math.ceil(total / limit)
+            for(let i = 1; i <= totalPage; i ++){
+                const active = (i == page)
+                pagination.push({page: i, active})
+            }
+
+            let next = page + 1
+            if (next > totalPage) next = totalPage
+
+            let prev = page - 1
+            if (prev < 1) prev = 1
                 
             res.render('admin/product/list', {
                 isAdmin: true,
                 shop: req.shop,
-                products: productArr
+                products: productArr,
+                pagination,
+                next, prev, search
             })
         }catch(error){
             next(error)
@@ -78,7 +99,7 @@ class ProductController{
             const product = await Product.findOneAndDelete({slug: req.params.slug})
             if (!product) return next()
 
-            res.redirect('/admin/san-pham')
+            res.redirect('back')
         }catch(error){
             next(error)
         }
