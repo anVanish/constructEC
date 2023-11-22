@@ -5,6 +5,7 @@ const path = require('path')
 const route = require('./routes')
 const db = require('./config/db')
 const morgan = require('morgan')
+const session = require('express-session')
 
 const handleError = require('./middlewares/handleError')
 const handleNotfound = require('./middlewares/handleNotfound')
@@ -58,7 +59,7 @@ app.engine('hbs', hbs.engine({
         },
         uppercase: (text) => {
             return text.toUpperCase()
-        }
+        },
     }
 })) //define and config
 app.set('view engine', 'hbs') //set
@@ -69,6 +70,12 @@ app.set('views', path.join(__dirname, 'resources/views'))
 app.use(morgan('short'))
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
+app.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: true,
+}))
+
 
 //route
 route(app)

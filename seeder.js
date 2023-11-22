@@ -2,12 +2,15 @@ const {shop} = require('./data/shop')
 const {categories} = require('./data/category')
 const {products} = require('./data/product')
 const {blogs} = require('./data/blog')
+const {admin} = require('./data/admin')
 const Shop = require('./src/app/models/Shop')
 const Category = require('./src/app/models/Category')
 const Product = require('./src/app/models/Product')
 const Blog = require('./src/app/models/Blog')
+const Admin = require('./src/app/models/Admin')
 const dotenv = require('dotenv')
 const db = require('./src/config/db')
+const bcrypt = require('bcryptjs')
 
 dotenv.config()
 db.connect()
@@ -79,7 +82,27 @@ async function clearAndSeedBlog(){
   }
 }
 
+async function clearAndSeedAdmin(){
+  try {
+    // Clear existing shop data
+    await Admin.deleteMany({});
+
+    const salt = bcrypt.genSaltSync()
+    const hashedPassword = bcrypt.hashSync(admin.password, salt)
+
+    admin.password = hashedPassword
+    const adminToSave = new Admin(admin)
+    await adminToSave.save()
+  
+    console.log('Admin info imported');
+  } catch (error) {
+    console.error(error);
+    console.log('Admin info import failure');
+  }
+}
+
 clearAndSeedShop()
 clearAndSeedCate()
 clearAndSeedProduct()
 clearAndSeedBlog()
+clearAndSeedAdmin()
