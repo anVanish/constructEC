@@ -1,0 +1,102 @@
+<div class="page-wrapper">
+    <div class="page-breadcrumb">
+        <div class="row align-items-center">
+            <div class="col-md-6 col-8 align-self-center">
+                <h3 class="page-title mb-0 p-0">Danh mục</h3>
+                <div class="d-flex align-items-center">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/admin">Trang chủ</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Danh mục</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- column -->
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Danh sách danh mục</h4>
+                        <div class="p-20">
+                            <a href="/admin/danh-muc/them" class="btn btn-primary text-white mt-4">Thêm danh mục</a>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table user-table">
+                                <thead>
+                                    <tr>
+                                        <th class="border-top-0">STT</th>
+                                        <th class="border-top-0">Tên danh mục</th>
+                                        <th class="border-top-0">Mô tả</th>
+                                        <th class="border-top-0">Hành động</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {{#each cates}}
+                                        <tr>
+                                            <td>{{increase @index}}</td>
+                                            <td>{{this.name}}</td>
+                                            <td>{{this.desc}}</td>
+                                            <td>
+                                                <div class="p-20">
+                                                    <a href="/admin/danh-muc/sua/{{this.slug}}" class="btn btn-warning text-white mt-4">Sửa</a>
+                                                    <button data-bs-toggle="modal" data-bs-target="#deleteProduct" data-bs-whatever="{{this.slug}}" class="btn btn-danger text-white mt-4">Xóa</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    {{/each}}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer"> © 2021 Material Pro Admin by <a href="https://www.wrappixel.com/">wrappixel.com </a>
+    </footer>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="deleteProduct" tabindex="-1" aria-labelledby="deleteProductLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" style="color: red;" id="deleteProductLabel">Xóa danh mục</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p style="color: red; ">Bạn có chắc chắn xóa danh mục này không?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success text-white" data-bs-dismiss="modal">Hủy</button>
+        <button type="button" id="deleteButtonModal" class="btn btn-danger text-white">Xóa</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<form id="deleteForm" style="display: none;" action="" method="POST"></form>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+        const deleteProductModal = document.getElementById('deleteProduct')
+        const deleteButtonModal = document.getElementById('deleteButtonModal')
+        let slug = ''
+        deleteProductModal.addEventListener('show.bs.modal', function(e){
+            const button = e.relatedTarget
+            slug = button.getAttribute('data-bs-whatever')
+
+            deleteButtonModal.addEventListener('click', function(){
+                const deleteForm = document.getElementById('deleteForm')
+                    deleteForm.action =  `/admin/danh-muc/xoa/${slug}`;
+                    deleteForm.submit()
+            })
+        })
+       
+    })
+</script>
