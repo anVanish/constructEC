@@ -10,5 +10,6 @@ router.post('/dang-nhap', authController.loginAdmin)
 
 // router.use(authenticateUser)
 router.get('/', adminController.dashboard)
+router.post('/', adminController.updateDashboard)
 
 module.exports = router
