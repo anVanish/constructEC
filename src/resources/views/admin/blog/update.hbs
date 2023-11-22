@@ -1,0 +1,147 @@
+<div class="page-wrapper">
+    <div class="page-breadcrumb">
+        <div class="row align-items-center">
+            <div class="col-md-6 col-8 align-self-center">
+                <h3 class="page-title mb-0 p-0">{{title}}</h3>
+                <div class="d-flex align-items-center">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/admin">Trang chủ</a></li>
+                            <li class="breadcrumb-item"><a href="/admin/tin-tuc">Tin Tức</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">{{title}}</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-fluid">
+        <!-- Row -->
+        <div class="row">
+            <!-- Column -->
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-body">
+                        <form class="form-horizontal form-material mx-2" method="POST" action="">
+                            <div class="form-group">
+                                <label class="col-md-12 mb-0 fw-bolder">Tên bài viết</label>
+                                <div class="col-md-12">
+                                    <input type="text" name="title" value="{{blog.title}}"
+                                        class="form-control ps-0 form-control-line" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-12 mb-0 fw-bolder">Link ảnh</label>
+                                <div class="col-md-12">
+                                    <input type="text" name="img" value="{{blog.img}}"
+                                        class="form-control ps-0 form-control-line" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-12 mb-0 fw-bolder">Nội dung bài viết</label>
+                            </div>
+                            <div id="contentContainer">
+                                {{#if blog.content}}
+                                {{#each blog.content}}
+                                <div class="content-item">
+                                    {{#if (checkAddButton @index)}}
+                                    <a class="text-white btn btn-danger delete-content mt-2 mb-2">Xoá nội dung</a>
+                                    {{/if}}
+
+                                    <div class="form-group">
+                                        <label class="col-md-12 mb-0">Tiêu đề</label>
+                                        <div class="col-md-12">
+                                            <input type="text" name="header[]" value="{{this.header}}"
+                                                class="form-control ps-0 form-control-line">
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-5">
+                                        <label class="col-md-12 mb-0">Nội dung</label>
+                                        <div class="col-md-12">
+                                            <textarea name="paragraph[]" rows="5" class="form-control ps-0 form-control-line">{{this.paragraph}}</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{/each}}
+                                {{else}}
+                                <div class="content-item">
+                                    <div class="form-group">
+                                        <label class="col-md-12 mb-0">Tiêu đề</label>
+                                        <div class="col-md-12">
+                                            <input type="text" name="header[]"
+                                                class="form-control ps-0 form-control-line" >
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-5">
+                                        <label class="col-md-12 mb-0">Nội dung</label>
+                                        <div class="col-md-12">
+                                            <textarea name="paragraph[]" rows="5" class="form-control ps-0 form-control-line"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{/if}}
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="col-sm-12 d-flex">
+                                    <button id="buttonAddContent" class="btn btn-secondary mx-auto mx-md-0 text-white">Thêm nội dung</button>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-sm-12 d-flex">
+                                    <button class="btn btn-success mx-auto mx-md-0 text-white" type="submit">{{#if isAdd}}Đăng tin{{else}}Cập nhật tin{{/if}}</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- Column -->
+        </div>
+        
+    </div>
+    <footer class="footer"> © 2021 Material Pro Admin by <a href="https://www.wrappixel.com/">wrappixel.com </a>
+    </footer>
+    
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+        const contentContainer = document.getElementById('contentContainer')
+        
+        document.getElementById('buttonAddContent').addEventListener('click', function(e){
+            e.preventDefault()
+            
+            const newInput = document.createElement('div');
+            newInput.className = 'content-item';
+            newInput.innerHTML = 
+            `
+                <a class="text-white btn btn-danger delete-content mt-2 mb-2">Xoá nội dung</a>
+                <div class="form-group">
+                <label class="col-md-12 mb-0">Tiêu đề</label>
+                <div class="col-md-12">
+                    <input type="text" name="header[]"
+                        class="form-control ps-0 form-control-line" >
+                </div>
+                </div>
+                <div class="form-group mb-5">
+                    <label class="col-md-12 mb-0">Nội dung</label>
+                    <div class="col-md-12">
+                        <textarea name="paragraph[]" rows="5" class="form-control ps-0 form-control-line"></textarea>
+                    </div>
+                </div>
+                `;
+
+            contentContainer.appendChild(newInput);
+        })
+
+        contentContainer.addEventListener('click', function (e) {
+            if (e.target && e.target.classList.contains('delete-content')) {
+                const parentDiv = e.target.parentElement;
+                contentContainer.removeChild(parentDiv);
+            }
+        });
+    })    
+</script>

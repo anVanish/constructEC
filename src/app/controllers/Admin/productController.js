@@ -61,6 +61,7 @@ class ProductController{
             next(error)
         }
     }
+    
     async actionUpdateProduct(req, res, next){
         try{
             const product = await Product.findOneAndUpdate({slug: req.params.slug}, req.body ,{new: true})
