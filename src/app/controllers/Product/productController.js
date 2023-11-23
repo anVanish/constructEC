@@ -33,7 +33,7 @@ class ProductController{
                 cate: req.cate,
                 products: productArr,
                 pagination,
-                next, last, search,
+                next, last, search, pageProduct
             })
         }catch(error){
             next(error)
