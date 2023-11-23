@@ -13,10 +13,16 @@ class GeneralController{
 
     //GET /lien-he
     contact(req, res, next){
+        const shop = req.shop
+        const address = `${shop.address.street}, ${shop.address.ward}, ${shop.address.district}, ${shop.address.city}`
+        const encodedAddress = encodeURIComponent(address);
+        const googleMapsURL = `https://maps.google.com/maps?q=${encodedAddress}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
+
         res.render('contact', {
             shop: req.shop,
             cate: req.cate,
             pageContact: true,
+            googleMapsURL,
         })
         
     }

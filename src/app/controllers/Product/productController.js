@@ -7,11 +7,13 @@ class ProductController{
     async listProduct(req, res, next){
         const page = req.query.page || 1
         const limit = 12
+        const search = req.query.search || ''
+        const filter = {'name': { $regex: `.*${search}.*`, $options: 'i' }}
         try{
-            const products = await Product.find({})
+            const products = await Product.find(filter)
                 .skip((page - 1) * 12)
                 .limit(limit)
-            const total = await Product.countDocuments({})
+            const total = await Product.countDocuments(filter)
             const productArr = products.map(item => item.toObject())
             
             const pagination = []
@@ -31,7 +33,7 @@ class ProductController{
                 cate: req.cate,
                 products: productArr,
                 pagination,
-                next, last, pageProduct,
+                next, last, search,
             })
         }catch(error){
             next(error)

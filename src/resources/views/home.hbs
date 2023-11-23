@@ -1,6 +1,6 @@
 <div class="slideshow">
 
-    <div id="mainSlider" class="owl-carousel">
+    <div id="mainSlider" class="owl-carousel" style="display: block;">
         {{#each shop.mainImg}}
         <div class="item" style="width: 100%">
             <a href="/" title=""><img
@@ -32,8 +32,16 @@
                     <div class="item item-{{increase @index}}">
                         <a href="/danh-muc/{{this.slug}}">
                             <span class="number">{{increase @index}}</span>
-                            <h2>{{this.name}}</h2>
-                            <p>{{this.desc}}</p>
+                            <h2 style="display: -webkit-box;
+                                -webkit-box-orient: vertical;
+                                -webkit-line-clamp: 1;
+                                overflow: hidden;">{{this.name}}</h2>
+                            <p style="
+                                display: -webkit-box;
+                                -webkit-box-orient: vertical;
+                                -webkit-line-clamp: 2;
+                                overflow: hidden;
+                            ">{{this.desc}}</p>
                         </a>
                     </div>
                 {{/each}}
@@ -57,10 +65,9 @@
                         <a class="box-product text-decoration-none" href="/san-pham/{{this.slug}}"
                             title="{{this.name}}">
                             <p class="pic-product scale-img"><img
-                                    onerror="this.src='thumbs/360x360x2/assets/images/noimage.png';"
-                                    src="{{this.img.[0]}}"
-                                    alt="{{this.name}}" /></p>
-
+                                onerror="this.src='thumbs/360x360x2/assets/images/noimage.png';" style="height: 259px !important;"
+                                src="{{this.img.[0]}}"
+                                alt="{{this.name}}" /></p>
                         </a>
                         <div class="info-product">
                             <div class="wrap-info">
@@ -77,7 +84,6 @@
                                                 {{/each}}</span></span>
                                     </p>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -114,8 +120,7 @@
                                 <div class="news-item-index-small mb-2">
                                     <div class="row row-5">
                                         <a class="link col-5" style="width:150px"
-                                            href="/tin-tuc/{{this.slug}}"><img
-                                                src="{{this.img}}" /></a>
+                                            href="/tin-tuc/{{this.slug}}"><img style="height: 76px !important" src="{{this.img}}" /></a>
                                         <div class="info col-7">
                                             <h4><a href="/tin-tuc/{{this.slug}}">{{this.title}}</a></h4>
                                             <div class="desc text-justify">{{this.content.[0].paragraph}}</div>
@@ -131,34 +136,7 @@
 
                 </div>
             </div>
-            <div class="col-12 col-md-4">
-                <div class="block-title">Video clip</div>
-                <div class="videos">
-                    <div class="">
 
-                        <div class="embed-responsive embed-responsive-4by3">
-                            <iframe id="video-frame" class="embed-responsive-item"
-                                src="https://www.youtube.com/embed/nDVZidzYJec?rel=0&autoplay=1"></iframe>
-                        </div>
-                    </div>
-                    <div class="owl-carousel owl-video my-2">
-                        <div class="video-obj d-flex">
-                            <div class="video trigger-video-change" data-target="#video-frame" data-id="nDVZidzYJec">
-
-                                <img src="https://img.youtube.com/vi/nDVZidzYJec/0.jpg" />
-
-                            </div>
-
-                        </div>
-                        <div class="video-obj d-flex">
-                            <div class="video trigger-video-change" data-target="#video-frame" data-id="N36chN7a-aU">
-
-                                <img src="https://img.youtube.com/vi/N36chN7a-aU/0.jpg" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </div>

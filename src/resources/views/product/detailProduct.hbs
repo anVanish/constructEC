@@ -38,6 +38,10 @@
                             <div class="attr-content-pro-detail"></div>
                         </li>
                         <li class="w-clear">
+                            <label class="attr-label-pro-detail">Mô tả:</label>
+                            <div class="attr-content-pro-detail">{{product.desc}}</div>
+                        </li>
+                        <li class="w-clear">
                             <label class="attr-label-pro-detail">Giá:</label>
                             <div class="attr-content-pro-detail">
                                 <span class="price-new-pro-detail">
@@ -73,14 +77,10 @@
 
                 <div class="tabs-pro-detail">
                     <ul class="ul-tabs-pro-detail w-clear">
-                        <li class="active transition" data-tabs="info-pro-detail">Thông tin sản phẩm</li>~
+                        <li class="active transition" data-tabs="info-pro-detail">Thông tin sản phẩm</li>
                     </ul>
                     <p>{{product.desc}}</p>
-
                 </div>
-
-
-
                 <div class="title-main has-filter d-flex align-items-center justify-content-between">
                     <h4>Sản phẩm cùng loại</h4>
                 </div>
@@ -93,7 +93,7 @@
                                 <a class="box-product text-decoration-none" href="/san-pham/{{this.slug}}"
                                     title="{{this.name}}">
                                     <p class="pic-product scale-img"><img
-                                            onerror="this.src='thumbs/360x360x2/assets/images/noimage.png';"
+                                            onerror="this.src='thumbs/360x360x2/assets/images/noimage.png';" style="height: 259px !important;"
                                             src="{{this.img.[0]}}"
                                             alt="{{this.name}}" /></p>
 

@@ -22,7 +22,6 @@
                 </div>
             </div>
         </div>
-
     </div>
     <div class="line-top pt-2 d-none d-sm-block">
         <div class="container">
@@ -35,8 +34,11 @@
                 <div class="col-md-10 col-12">
 
                     <div class="d-flex justify-content-between align-items-center">
-                        <div><img class="main-banner" src="/thumbs/0x100x1/upload/photo/banner-head-2211.jpg" /></div>
-                        <div>
+                        <div class="col-md-6 mx-auto text-center">
+                            <h2 class="text-danger" style="font-weight:bolder;">{{uppercase shop.name}}</h2>
+                            <h5>"Uy tín - Chất lượng tạo nên thương hiệu"</h2>
+                        </div>
+                        <div class="col-md-4">
                             <div class="xhotline">
                                 <span class="pull-left">Hotline</span>
                                 <div class="pull-left d-inline-block">
@@ -48,8 +50,8 @@
 
                             </div>
                             <div class="search mt-3">
-                                <form action="https://cokhinguyenhungdalat.com/search.html">
-                                    <input type="text" name="keyword" value="" placeholder="Tìm kiếm sản phẩm" /><button
+                                <form action="/san-pham">
+                                    <input type="text" value="{{search}}" name="search" placeholder="Tìm kiếm sản phẩm" id="search-box"/><button
                                         type="submit">Tìm kiếm</button>
                                 </form>
                             </div>
@@ -118,8 +120,8 @@
         <div class="search-mobile-custom">
             <div class="row align-items-center justify-content-between">
                 <div class="form-search">
-                    <form class="top-form" action="https://cokhinguyenhungdalat.com/search.html">
-                        <input name="keyword" class="place-white" placeholder="Tìm kiếm ..." required value="" />
+                    <form class="top-form" action="/san-pham">
+                        <input name="search" class="place-white" placeholder="Tìm kiếm ..." required value="" />
                     </form>
                 </div>
             </div>

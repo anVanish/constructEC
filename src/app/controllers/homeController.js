@@ -1,5 +1,6 @@
 const Product = require("../models/Product")
 const Blog = require('../models/Blog')
+const Category = require('../models/Category')
 
 class HomeController{
     //GET /
@@ -16,9 +17,14 @@ class HomeController{
             const newBlogsArr = newBlogs.map(item => item.toObject())
             const [latest, ...otherBlogs] = newBlogsArr
 
+            const cate = await Category.find({})
+                .limit(6)
+
+            const cateArr = cate.map(item => item.toObject())
+
             res.render('home', {
                 shop: req.shop,
-                cate: req.cate,
+                cate: cateArr,
                 pageHome: true,
                 popProducts: popProductsArr,
                 latest, otherBlogs,
