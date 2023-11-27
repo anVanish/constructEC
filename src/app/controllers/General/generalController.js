@@ -27,16 +27,6 @@ class GeneralController{
         
     }
 
-    //GET /cong-trinh
-    construct(req, res, next){
-        res.render('construct', {
-            shop: req.shop,
-            cate: req.cate,
-            pageConstruct: true,
-        })
-        
-    }
-
     //GET /dich-vu
     service(req, res, next){
         res.render('service', {

@@ -3,14 +3,13 @@
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a class="text-decoration-none" href="/"><span>Trang chủ</span></a>
             </li>
-            <li class="breadcrumb-item active"><a class="text-decoration-none" href="/san-pham"><span>Sản
-                        phẩm</span></a></li>
+            <li class="breadcrumb-item active"><a class="text-decoration-none" href="/cong-trinh"><span>Công trình</span></a></li>
             {{#if isCate}}
             <li class="breadcrumb-item active"><a class="text-decoration-none" href="{{currentCate.slug}}"><span>{{currentCate.name}}</span></a>
             {{/if}}
         </ol>
         <script
-            type="application/ld+json">{"@context": "https://schema.org","@type": "BreadcrumbList","itemListElement": [{"@type":"ListItem","position":1,"name":"S\u1ea3n ph\u1ea9m","item":"https:\/\/cokhinguyenhungdalat.com\/san-pham"}]}</script>
+            type="application/ld+json">{"@context": "https://schema.org","@type": "BreadcrumbList","itemListElement": [{"@type":"ListItem","position":1,"name":"S\u1ea3n ph\u1ea9m","item":"https:\/\/cokhinguyenhungdalat.com\/cong-trinh"}]}</script>
     </div>
 </div>
 <div class="container mt-3">
@@ -22,7 +21,7 @@
                 {{#if isCate}}
                 <h1>{{currentCate.name}}</h1>
                 {{else}}
-                <h1>Sản phẩm</h1>
+                <h1>Công trình</h1>
                 {{/if}}
             </div>
             <div class="content-main w-clear">
@@ -31,10 +30,10 @@
                         {{#each products}}
                         <div class="col-6 col-sm-4 col-md-3 col-lg-3 mb-4">
                             <div class="product grid">
-                                <a class="box-product text-decoration-none" href="/san-pham/{{this.slug}}"
+                                <a class="box-product text-decoration-none" href="/cong-trinh/{{this.slug}}"
                                     title="{{this.name}}">
                                     <p class="pic-product scale-img"><img
-                                            onerror="this.src='thumbs/360x360x2/assets/images/noimage.png';" style="height: 259px !important;"
+                                            onerror="handleImageError(this);" style="height: 259px !important;"
                                             src="{{this.img.[0]}}"
                                             alt="{{this.name}}" /></p>
 
@@ -67,11 +66,11 @@
 
                             {{#each pagination}}
                             <li class='page-item {{#if this.active}} active {{/if}}'><a class='page-link' 
-                            href= {{#if ../isCate}}"/danh-muc/{{../currentCate.slug}}?page={{this.page}}" {{else}}"/san-pham?page={{this.page}}" {{/if}}>{{this.page}}</a></li>
+                            href= {{#if ../isCate}}"/danh-muc/{{../currentCate.slug}}?page={{this.page}}" {{else}}"/cong-trinh?page={{this.page}}" {{/if}}>{{this.page}}</a></li>
                             {{/each}}
                             
-                            <li class='page-item'><a class='page-link' href={{#if isCate}}"/danh-muc/{{currentCate.slug}}?page={{this.page}}" {{else}}'san-pham?page={{next}} ' {{/if}}>Next</a></li>
-                            <li class='page-item'><a class='page-link' href={{#if isCate}}"/danh-muc/{{currentCate.slug}}?page={{this.page}}" {{else}}'san-pham?page={{last}}{{/if}}'>Last</a></li>
+                            <li class='page-item'><a class='page-link' href={{#if isCate}}"/danh-muc/{{currentCate.slug}}?page={{this.page}}" {{else}}'cong-trinh?page={{next}} ' {{/if}}>Next</a></li>
+                            <li class='page-item'><a class='page-link' href={{#if isCate}}"/danh-muc/{{currentCate.slug}}?page={{this.page}}" {{else}}'cong-trinh?page={{last}}{{/if}}'>Last</a></li>
                         </ul>
                     </div>
                 </div>
@@ -91,4 +90,11 @@
             console.log(`${page}&search=${search}`)
         });
     });
+    function handleImageError(img) {
+        console.log(img.src)
+        if (!img.onerrorHandled) {
+            img.src = '/thumbs/360x360x2/assets/images/noimage.jpg';
+            img.onerrorHandled = true;
+        }
+    }
 </script>

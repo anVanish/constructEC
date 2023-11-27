@@ -5,7 +5,6 @@ const homeController = require('../../app/controllers/homeController')
 
 router.get('/gioi-thieu', generalController.about)
 router.get('/lien-he', generalController.contact)
-router.get('/cong-trinh', generalController.construct)
 router.get('/dich-vu', generalController.service)
 router.get('/', homeController.home)
 

@@ -12,7 +12,7 @@ function route(app){
     app.use(getShop)
     app.use(getCate)
     
-    app.use('/san-pham', productRouter)
+    app.use('/cong-trinh', productRouter)
     app.use('/tin-tuc', newsRouter)
     app.use('/danh-muc', cateRouter)
     app.use('/admin', adminRouter)
