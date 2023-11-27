@@ -5,7 +5,6 @@
             </li>
             <li class="breadcrumb-item "><a class="text-decoration-none" href="/cong-trinh"><span>Công trình</span></a>
             </li>
-            <li class="breadcrumb-item "><a class="text-decoration-none" href="/danh-muc/{{product.categoryId.slug}}"><span>{{product.categoryId.name}}</span></a></li>
             <li class="breadcrumb-item active"><a class="text-decoration-none"
                     href="{{product.slug}}"><span>{{product.name}}</span></a></li>
         </ol>
@@ -33,14 +32,6 @@
 
                     <div class="desc-pro-detail"></div>
                     <ul class="attr-pro-detail">
-                        <li class="w-clear">
-                            <label class="attr-label-pro-detail">Mã sản phẩm:</label>
-                            <div class="attr-content-pro-detail"></div>
-                        </li>
-                        <li class="w-clear">
-                            <label class="attr-label-pro-detail">Mô tả:</label>
-                            <div class="attr-content-pro-detail">{{product.desc}}</div>
-                        </li>
                         <li class="w-clear">
                             <label class="attr-label-pro-detail">Giá:</label>
                             <div class="attr-content-pro-detail">
@@ -77,12 +68,12 @@
 
                 <div class="tabs-pro-detail">
                     <ul class="ul-tabs-pro-detail w-clear">
-                        <li class="active transition" data-tabs="info-pro-detail">Thông tin sản phẩm</li>
+                        <li class="active transition" data-tabs="info-pro-detail">Thông tin công trình</li>
                     </ul>
                     <p>{{product.desc}}</p>
                 </div>
                 <div class="title-main has-filter d-flex align-items-center justify-content-between">
-                    <h4>Sản phẩm cùng loại</h4>
+                    <h4>Các công trình khác</h4>
                 </div>
 
                 <div class="content-main w-clear">
