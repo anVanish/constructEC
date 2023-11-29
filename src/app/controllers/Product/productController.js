@@ -3,7 +3,7 @@ const pageProduct = true
 
 class ProductController{
     
-    //GET /san-pham
+    //GET /cong-trinh
     async listProduct(req, res, next){
         const page = req.query.page || 1
         const limit = 12
@@ -40,7 +40,7 @@ class ProductController{
         }       
     }
 
-    //GET /san-pham/:slug
+    //GET /cong-trinh/:slug
     async detailProduct(req, res, next){
         const slug = req.params.slug
         try{
