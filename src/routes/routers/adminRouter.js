@@ -11,7 +11,7 @@ const cateController = require('../../app/controllers/Admin/cateController')
 router.get('/dang-nhap', authController.login)
 router.post('/dang-nhap', authController.loginAdmin)
 
-router.use(authenticateUser)
+// router.use(authenticateUser)
 router.get('/webpage', adminController.webpage)
 router.post('/webpage', adminController.updateWebpage)
 

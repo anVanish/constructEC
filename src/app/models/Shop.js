@@ -18,7 +18,7 @@ const Shop = new mongoose.Schema({
         facebook: {type: String},
         website: {type: String},
     },
-    mainImg: [{type: String}],
+    mainImg: {type: String},
     about: {type: String}
 })
 

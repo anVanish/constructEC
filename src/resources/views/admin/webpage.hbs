@@ -23,11 +23,11 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-body">
-                        <form method="POST" class="form-horizontal form-material mx-2">
+                        <form method="POST" enctype="multipart/form-data" class="form-horizontal form-material mx-2">
                             <div class="form-group mb-5">
-                                <label class="col-md-12 mb-0">Link Logo trang web</label>
+                                <label class="col-md-12 mb-0">Logo trang web</label>
                                 <div class="col-md-12">
-                                    <input type="text" name="logo" value="{{shop.logo}}"
+                                    <input type="file" accept="image/*" name="logo" value="{{shop.logo}}"
                                         class="form-control ps-0 form-control-line">
                                     <div class="mt-4"> 
                                         <img src="{{shop.logo}}"
@@ -36,9 +36,9 @@
                                 </div>
                             </div>
                             <div class="form-group mb-5">
-                                <label class="col-md-12 mb-0">Link Ảnh bìa trang chủ</label>
+                                <label class="col-md-12 mb-0">Ảnh bìa trang chủ</label>
                                 <div class="col-md-12">
-                                    <input type="text" name="mainImg" value="{{shop.mainImg}}"
+                                    <input type="file" accept="image/&" name="mainImg" value="{{shop.mainImg}}"
                                         class="form-control ps-0 form-control-line">
                                     <div class="mt-4"> 
                                         <img src="{{shop.mainImg}}"
