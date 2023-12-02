@@ -28,7 +28,7 @@ class ProductController{
             const products = await Product.find({'name': { $regex: `.*${search}.*`, $options: 'i' }})
                 .sort({updatedAt: -1})
                 .skip((page - 1) * limit)
-                .limit(7)
+                .limit(10)
                 .populate('categoryId', 'name slug')
 
             const total = await Product.countDocuments({'name': { $regex: `.*${search}.*`, $options: 'i' }})
