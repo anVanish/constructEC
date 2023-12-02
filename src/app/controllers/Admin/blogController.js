@@ -1,4 +1,22 @@
 const Blog = require('../../models/Blog')
+const multer = require('multer')
+const path = require('path')
+const { promisify } = require('util')
+const fs = require('fs')
+
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, 'src/public/upload/blogs/')
+    },
+    filename: function (req, file, cb) {
+        const productSlug = req.params.slug
+        const ext = path.extname(file.originalname)
+        const filename = productSlug + ext
+        cb(null, filename)
+    },
+})
+const upload = multer({ storage: storage })
+const uploadAsync = promisify(upload.single('img'))
 
 class BlogController{
     //GET /admin/tin-tuc
@@ -37,6 +55,16 @@ class BlogController{
     //POST /admin/tin-tuc/them
     async actionAddBlog(req, res, next){
         try{
+            await uploadAsync(req, res)
+
+            if (req.fileValidationError) {
+                throw new Error()
+            } else if (!req.file) {
+                throw new Error()
+            }
+
+            req.body.img = '/upload/blogs/' + req.file.filename
+
             const content = [];
             for (let i = 0; i < req.body.header.length; i++){
                 const obj = {
@@ -75,6 +103,18 @@ class BlogController{
     //POST /admin/tin-tuc/:slug/sua
     async actionUpdateBlog(req, res, next){
         try{
+            await uploadAsync(req, res)
+
+            if (!req.fileValidationError && req.file) {
+                const blogExist = await Blog.findOne({slug: req.params.slug})
+                if (blogExist.img !== '/upload/blogs/' + req.file.filename)
+                    deleteImage(blogExist.img)
+                req.body.img = '/upload/blogs/' + req.file.filename
+            }
+            else {
+                delete req.body.img
+            }
+
             const content = [];
             for (let i = 0; i < req.body.header.length; i++){
                 const obj = {
@@ -98,12 +138,20 @@ class BlogController{
         try{
             const blog = await Blog.findOneAndDelete({slug: req.params.slug})
             if (!blog) return next()
+            deleteImage(blog.img)
 
             res.redirect('/admin/tin-tuc')
         }catch(error){  
             next(error)
         }
 
+    }
+}
+
+function deleteImage(img){
+    const imagePath = path.join(__dirname, '../../../public/', img)
+    if (fs.existsSync(imagePath)) {
+        fs.unlinkSync(imagePath)
     }
 }
 

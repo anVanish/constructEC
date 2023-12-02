@@ -138,8 +138,8 @@ class ProductController{
     async deleteProduct(req, res, next){
         try{
             const product = await Product.findOneAndDelete({slug: req.params.slug})
-            deleteImage(product.img)
             if (!product) return next()
+            deleteImage(product.img)
 
             res.redirect('back')
         }catch(error){
