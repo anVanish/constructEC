@@ -28,6 +28,8 @@ async function clearAndSeedShop(){
       } catch (error) {
         console.error(error);
         console.log('Shop info import failure');
+      } finally{
+        process.exit()
       }
 }
 
@@ -45,6 +47,8 @@ async function clearAndSeedCate(){
       } catch (error) {
         console.error(error);
         console.log('Category info import failure');
+      } finally{
+        process.exit()
       }
 }
 
@@ -62,6 +66,8 @@ async function clearAndSeedProduct(){
   } catch (error) {
     console.error(error);
     console.log('Product info import failure');
+  } finally{
+    process.exit()
   }
 }
 
@@ -79,6 +85,8 @@ async function clearAndSeedBlog(){
   } catch (error) {
     console.error(error);
     console.log('Blog info import failure');
+  } finally{
+    process.exit()
   }
 }
 
@@ -98,11 +106,13 @@ async function clearAndSeedAdmin(){
   } catch (error) {
     console.error(error);
     console.log('Admin info import failure');
+  } finally{
+    process.exit()
   }
 }
 
-clearAndSeedShop()
-clearAndSeedCate()
+// clearAndSeedShop()
+// clearAndSeedCate()
 clearAndSeedProduct()
-clearAndSeedBlog()
-clearAndSeedAdmin()
+// clearAndSeedBlog()
+// clearAndSeedAdmin()

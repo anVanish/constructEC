@@ -1,7 +1,25 @@
 const Product = require('../../models/Product')
+const multer = require('multer')
+const path = require('path')
+const { promisify } = require('util')
+const fs = require('fs')
+
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, 'src/public/upload/products/')
+    },
+    filename: function (req, file, cb) {
+        const productSlug = req.params.slug
+        const ext = path.extname(file.originalname)
+        const filename = productSlug + ext
+        cb(null, filename)
+    },
+})
+const upload = multer({ storage: storage })
+const uploadAsync = promisify(upload.single('img'))
 
 class ProductController{
-    //GET /admin/san-pham
+    //GET /admin/cong-trinh
     async product(req, res, next){
         const search = req.query.search || ''
         const limit = 12
@@ -42,7 +60,7 @@ class ProductController{
 
     }
 
-    //GET /admin/san-pham/them
+    //GET /admin/cong-trinh/them
     addProduct(req, res, next){
         res.render('admin/product/update', {
             isAdmin: true,
@@ -53,18 +71,29 @@ class ProductController{
         })
     }
 
-    //POST /admin/san-pham/them
+    //POST /admin/cong-trinh/them
     async actionAddProduct(req, res, next){
         try{
+            await uploadAsync(req, res)
+
+            if (req.fileValidationError) {
+                throw new Error()
+            } else if (!req.file) {
+                throw new Error()
+            }
+
             const product = new Product(req.body)
+            product.img = '/upload/products/' + req.file.filename
+
             await product.save()
-            res.redirect('/admin/san-pham')
+            res.redirect('/admin/cong-trinh')
+            res.json(req.body)
         }catch(error){
             next(error)
         }
     }
 
-    //GET /admin/san-pham/xoa/:slug
+    //GET /admin/cong-trinh/xoa/:slug
     async updateProduct(req, res, next){
         const slug = req.params.slug
         try{
@@ -85,18 +114,31 @@ class ProductController{
     
     async actionUpdateProduct(req, res, next){
         try{
+            await uploadAsync(req, res)
+            
+            if (!req.fileValidationError && req.file) {
+                const productExist = await Product.findOne({slug: req.params.slug})
+                if (productExist.img !== '/upload/products/' + req.file.filename)
+                    deleteImage(productExist.img)
+                req.body.img = '/upload/products/' + req.file.filename
+            }
+            else {
+                delete req.body.img
+            }
+
             const product = await Product.findOneAndUpdate({slug: req.params.slug}, req.body ,{new: true})
             if (!product) return next()
-            res.redirect('/admin/san-pham')
+            res.redirect('/admin/cong-trinh')
         }catch(error){
             next(error)
         }
     }
 
-    //POST /admin/san-pham/sua/:slug
+    //POST /admin/cong-trinh/sua/:slug
     async deleteProduct(req, res, next){
         try{
             const product = await Product.findOneAndDelete({slug: req.params.slug})
+            deleteImage(product.img)
             if (!product) return next()
 
             res.redirect('back')
@@ -104,6 +146,13 @@ class ProductController{
             next(error)
         }
         
+    }
+}
+
+function deleteImage(img){
+    const imagePath = path.join(__dirname, '../../../public/', img)
+    if (fs.existsSync(imagePath)) {
+        fs.unlinkSync(imagePath)
     }
 }
 

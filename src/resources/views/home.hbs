@@ -66,7 +66,7 @@
                             title="{{this.name}}">
                             <p class="pic-product scale-img"><img
                                 onerror="this.src='thumbs/360x360x2/assets/images/noimage.jpg';" style="height: 259px !important;"
-                                src="{{this.img.[0]}}"
+                                src="{{this.img}}"
                                 alt="{{this.name}}" /></p>
                         </a>
                         <div class="info-product">
@@ -109,7 +109,7 @@
                                     src="{{latest.img}}" /></a>
                             <h4><a href="/tin-tuc/{{latest.slug}}">{{latest.title}}</a></h4>
                             <div class="desc text-justify text-split">
-                            {{latest.content.[0].paragraph}}</div>
+                            {{latest.content.paragraph}}</div>
                         </div>
                     </div>
 
@@ -123,7 +123,7 @@
                                             href="/tin-tuc/{{this.slug}}"><img style="height: 76px !important" src="{{this.img}}" /></a>
                                         <div class="info col-7">
                                             <h4><a href="/tin-tuc/{{this.slug}}">{{this.title}}</a></h4>
-                                            <div class="desc text-justify">{{this.content.[0].paragraph}}</div>
+                                            <div class="desc text-justify">{{this.content.paragraph}}</div>
                                         </div>
                                     </div>
                                 </div>
