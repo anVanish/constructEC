@@ -109,7 +109,7 @@
                                     src="{{latest.img}}" /></a>
                             <h4><a href="/tin-tuc/{{latest.slug}}">{{latest.title}}</a></h4>
                             <div class="desc text-justify text-split">
-                            {{latest.content.paragraph}}</div>
+                            {{latest.content.[0].paragraph}}</div>
                         </div>
                     </div>
 
@@ -123,7 +123,7 @@
                                             href="/tin-tuc/{{this.slug}}"><img style="height: 76px !important" src="{{this.img}}" /></a>
                                         <div class="info col-7">
                                             <h4><a href="/tin-tuc/{{this.slug}}">{{this.title}}</a></h4>
-                                            <div class="desc text-justify">{{this.content.paragraph}}</div>
+                                            <div class="desc text-justify">{{this.content.[0].paragraph}}</div>
                                         </div>
                                     </div>
                                 </div>

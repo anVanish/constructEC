@@ -53,10 +53,9 @@
 
                     <h2>{{shop.name}}</h2>
 
-                    <p><strong>Địa chỉ:</strong> <a href="https://goo.gl/maps/Dm7U4iQgL8jaavd67">{{shop.address.street}},
-                            {{shop.address.ward}}, {{shop.address.district}}, {{shop.address.city}}</a></p>
+                    <p><strong>Địa chỉ: </strong>{{showAddr shop.address}}</p>
 
-                    <p><strong>Email:</strong>{{shop.email}}</p>
+                    <p><strong>Email: </strong>{{shop.email}}</p>
 
                     <p><strong>SĐT liên hệ: </strong>
                     {{#each shop.phone}}
@@ -64,9 +63,9 @@
                     {{/each}}
                     </p>
 
-                    <p><strong>Zalo</strong>: <a target="_blank" href="{{shop.social.zalo}}">Liên hệ</a></p>
+                    <p><strong>Zalo</strong>: <a target="_blank" href="https://zalo.me/{{shop.social.zalo}}">Liên hệ</a></p>
 
-                    <p><strong>Website</strong>: <a href="/">{{shop.social.website}}</a></p>
+                    <p><strong>Website</strong>: {{shop.social.website}}</p>
 
                     <p><strong>Giờ làm việc</strong>: {{shop.worktime}}</p>
                 </div>
